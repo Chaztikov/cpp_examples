@@ -1,0 +1,10 @@
+future<int> f1= async([]() {return 123;});
+future<string> f2 = f1.then([](future<int> f){ return f.get().to_string(); });
+
+future<int> futures[] = {async([]() { return intResult(125); }), 
+                         async([]() { return intResult(456); })};
+future<vector<future<int>>> any_f = when_any(begin(futures), end(futures));
+
+future<int> futures[] = {async([]() { return intResult(125); }), 
+                         async([]() { return intResult(456); })};
+future<vector<future<int>>> all_f = when_all(begin(futures), end(futures));

@@ -1,0 +1,8 @@
+template<typename Cont>
+  requires Sortable<Cont>()
+void sort(Cont& container){...}
+
+/*
+std::list<int> lst = {1998,2014,2003,2011};
+sort(lst); // ERROR: lst is no random-access container with <
+*/

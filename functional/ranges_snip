@@ -1,0 +1,4 @@
+  auto odds= view::transform([](int i){ return i*i; }) |
+             view::remove_if([](int i){ return i % 2 == 0; }) |
+             view::take_while([](int i){ return i < 1000; });
+  auto oddNumbers= view::ints(1) | odds;
