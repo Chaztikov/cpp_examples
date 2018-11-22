@@ -6,3 +6,8 @@ void sort(Cont& container){...}
 std::list<int> lst = {1998,2014,2003,2011};
 sort(lst); // ERROR: lst is no random-access container with <
 */
+
+template <Sortable Cont>
+void sort(Cont & cont) {
+ Random_access_iterator q = std::begin(c);
+} 
