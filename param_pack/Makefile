@@ -1,2 +1,3 @@
 all:
-	clang++ -std=gnu++2a -stdlib=libc++ -ldl -lm  main.C -o main
+	clang++ -DNDEBUG -O0 -std=gnu++2a -pedantic -pthread -Wno-all -I/usr/include/cppunit/ -I/usr/include/llvm-7/ -I/home/chaztikov/src/libmesh/libmesh-1.3.1/clang-serial/include -I/usr/local/include -I/usr/include/eigen3 -pthread -I/usr/include -c main.C -o main.o
+	clang++ -O0 -std=gnu++2a -pedantic -pthread -Wno-all -I/usr/include/cppunit/ -I/usr/include/llvm-7/ main.o -o example-opt -Wl,-rpath -Wl,/home/chaztikov/src/libmesh/libmesh-1.3.1/clang-serial/lib -Wl,-rpath-Wl,/usr/local/lib  -L/home/chaztikov/src/libmesh/libmesh-1.3.1/clang-serial/lib /home/chaztikov/src/libmesh/libmesh-1.3.1/clang-serial/lib/libmesh_opt.a -L/usr/local/lib /home/chaztikov/src/libmesh/libmesh-1.3.1/clang-serial/lib/libnetcdf.a /usr/lib/x86_64-linux-gnu/libcurl-gnutls.so -ldl /usr/local/lib/libglpk.so -lm -lz -fopenmp -pthread
