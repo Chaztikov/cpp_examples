@@ -16,6 +16,12 @@ void FoldPushBack(vector<T>& v, Args&&... args)
     (v.push_back(args), ...);
 }
 
+template<typename T, typename... Args>
+void push_back_vec(std::vector<T>& v, Args&&... args)
+{
+    (v.push_back(args), ...);
+}
+
 int main()
 {
     FoldPrint("hello", ", ", 10, ", ", 90.0);
