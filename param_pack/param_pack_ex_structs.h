@@ -16,6 +16,9 @@ void FoldPushBack(vector<T>& v, Args&&... args)
     (v.push_back(args), ...);
 }
 
+/*
+ fold over a comma operator:
+*/
 template<typename T, typename... Args>
 void push_back_vec(std::vector<T>& v, Args&&... args)
 {
