@@ -10,8 +10,7 @@ void push_back_vec(std::vector<T> &v, Args &&... args)
 {
     (v.push_back(args), ...);
 }
-
-template <typename T, typename... Args>
+template <typename... Args>
 void FoldWrite(
     std::ofstream &outfile,
     std::string &savename,
@@ -21,6 +20,13 @@ void FoldWrite(
     (outfile << ... << std::forward<Args>(args)) << "\n";
 }
 
+template <typename... Args>
+void FoldWrite(
+    std::ofstream &outfile,
+    Args &&... args)
+{
+    (outfile << ... << std::forward<Args>(args)) << "\n";
+}
 template<typename ...Args>
 void FoldPrint(Args&&... args) {
     (std::cout <<  ... <<  std::forward<Args>(args)) << "\n";
