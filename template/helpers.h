@@ -1,8 +1,8 @@
 #include <algorithm>
-#include <cmath>
-#include <ctime>
 #include <cstddef>
 #include <cstdlib>
+#include <cmath>
+#include <ctime>
 #include <functional>
 #include <iomanip>
 #include <iostream>
@@ -37,7 +37,8 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <sys/types.h>
-std::valarray<float> linspace(float start, float stop, int size)
+
+std::valarray<float> linspace(float start, float stop, const unsigned int size)
 {
     std::valarray<float> v(size);
     for(int i=0; i<size; i++) v[i] = start + i * (stop-start)/size;
@@ -80,4 +81,17 @@ std::string plot(const std::valarray<float>& x, const std::valarray<float>& y)
     std::string s = psstm(command + std::to_string(sz));
     shm_unlink(name);
     return s;
+}
+
+// Linear interpolation following MATLAB linspace
+std::vector<float> LinearSpacedArray(float a, float b, std::size_t N)
+{
+    float h = (b - a) / static_cast<float>(N-1);
+    std::vector<float> xs(N);
+    std::vector<float>::iterator x;
+    float val;
+    for (x = xs.begin(), val = a; x != xs.end(); ++x, val += h) {
+        *x = val;
+    }
+    return xs;
 }
