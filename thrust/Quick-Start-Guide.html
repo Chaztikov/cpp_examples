@@ -1,0 +1,1374 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+  <link rel="dns-prefetch" href="https://assets-cdn.github.com">
+  <link rel="dns-prefetch" href="https://avatars0.githubusercontent.com">
+  <link rel="dns-prefetch" href="https://avatars1.githubusercontent.com">
+  <link rel="dns-prefetch" href="https://avatars2.githubusercontent.com">
+  <link rel="dns-prefetch" href="https://avatars3.githubusercontent.com">
+  <link rel="dns-prefetch" href="https://github-cloud.s3.amazonaws.com">
+  <link rel="dns-prefetch" href="https://user-images.githubusercontent.com/">
+
+
+
+  <link crossorigin="anonymous" media="all" integrity="sha512-lLo2nlsdl+bHLu6PGvC2j3wfP45RnK4wKQLiPnCDcuXfU38AiD+JCdMywnF3WbJC1jaxe3lAI6AM4uJuMFBLEw==" rel="stylesheet" href="https://assets-cdn.github.com/assets/frameworks-08fc49d3bd2694c870ea23d0906f3610.css" />
+  <link crossorigin="anonymous" media="all" integrity="sha512-Ny5v7zCiIV6M3ZihevvxYkJaQQritulmmljyShuDy19NhQt2ErB1HnelPvkN7U1cTTmO/h7MwNddq+cP64iEIw==" rel="stylesheet" href="https://assets-cdn.github.com/assets/github-cd2827e3284d3572368e5b2ea7e766f4.css" />
+  
+  
+  
+  
+  
+
+  <meta name="viewport" content="width=device-width">
+  
+  <title>Quick Start Guide · thrust/thrust Wiki</title>
+    <meta name="description" content="Thrust is a parallel algorithms library which resembles the C++ Standard Template Library (STL). - thrust/thrust">
+    <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub">
+  <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
+  <meta property="fb:app_id" content="1401488693436528">
+
+    
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1384216?s=400&amp;v=4" /><meta property="og:site_name" content="GitHub" /><meta property="og:type" content="object" /><meta property="og:title" content="thrust/thrust" /><meta property="og:url" content="https://github.com/thrust/thrust" /><meta property="og:description" content="Thrust is a parallel algorithms library which resembles the C++ Standard Template Library (STL). - thrust/thrust" />
+
+  <link rel="assets" href="https://assets-cdn.github.com/">
+  <link rel="web-socket" href="wss://live.github.com/_sockets/VjI6MzE1NjI1MjgyOmM3ODA3ZTNmOTM2OGYxMWNmMGY5MmMwY2Y4M2VmYWJiMmQ3NmZhYmNlZGMzM2IyMGQ3ODMzZmJkMDkwOTkyYzM=--109ab55763051b65ac353e3c785f36a596647633">
+  <meta name="pjax-timeout" content="1000">
+  <link rel="sudo-modal" href="/sessions/sudo_modal">
+  <meta name="request-id" content="BCB6:0C69:2CEA04E:4F09FA5:5BFE6D59" data-pjax-transient>
+
+
+  
+
+  <meta name="selected-link" value="repo_wiki" data-pjax-transient>
+
+      <meta name="google-site-verification" content="KT5gs8h0wvaagLKAVWq8bbeNwnZZK1r1XQysX3xurLU">
+    <meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA">
+    <meta name="google-site-verification" content="GXs5KoUUkNCoaAZn7wPN-t01Pywp9M3sEjnt_3_ZWPc">
+
+  <meta name="octolytics-host" content="collector.githubapp.com" /><meta name="octolytics-app-id" content="github" /><meta name="octolytics-event-url" content="https://collector.githubapp.com/github-external/browser_event" /><meta name="octolytics-dimension-request_id" content="BCB6:0C69:2CEA04E:4F09FA5:5BFE6D59" /><meta name="octolytics-dimension-region_edge" content="iad" /><meta name="octolytics-dimension-region_render" content="iad" /><meta name="octolytics-actor-id" content="9398385" /><meta name="octolytics-actor-login" content="Chaztikov" /><meta name="octolytics-actor-hash" content="a86355ef91f730fff551e5e6a933cf050b43fbc4f062ffcd3e13afea72205db7" />
+<meta name="analytics-location" content="/&lt;user-name&gt;/&lt;repo-name&gt;/wiki/show" data-pjax-transient="true" />
+
+
+
+    <meta name="google-analytics" content="UA-3769691-2">
+
+  <meta class="js-ga-set" name="userId" content="2aa306ae77e7cfaddbd9ca397cf4db51" %>
+
+<meta class="js-ga-set" name="dimension1" content="Logged In">
+
+
+
+  
+
+      <meta name="hostname" content="github.com">
+    <meta name="user-login" content="Chaztikov">
+
+      <meta name="expected-hostname" content="github.com">
+    <meta name="js-proxy-site-detection-payload" content="Y2RlMTUyNzI2MjllOGFlZmI3YTYwODE5YmFmZDBkZWI3MTdhMGYzNjA0MDE1MmM1NTFkMDJhZjljOTExNDgzZHx7InJlbW90ZV9hZGRyZXNzIjoiMTA3LjE1LjQ3LjQzIiwicmVxdWVzdF9pZCI6IkJDQjY6MEM2OToyQ0VBMDRFOjRGMDlGQTU6NUJGRTZENTkiLCJ0aW1lc3RhbXAiOjE1NDM0MDA3OTMsImhvc3QiOiJnaXRodWIuY29tIn0=">
+
+    <meta name="enabled-features" content="DASHBOARD_V2_LAYOUT_OPT_IN,EXPLORE_DISCOVER_REPOSITORIES,UNIVERSE_BANNER,MARKETPLACE_PLAN_RESTRICTION_EDITOR,NOTIFY_ON_BLOCK,SAVED_THREADS,TIMELINE_COMMENT_UPDATES,SUGGESTED_CHANGES_UX_TEST,SUGGESTED_CHANGES_BATCH,RELATED_ISSUES,MARKETPLACE_INSIGHTS_V2">
+
+  <meta name="html-safe-nonce" content="b2b2257fe5b45e5a6209df5caa27578ed32db227">
+
+  <meta http-equiv="x-pjax-version" content="9b6ba8a4cf4b0c7b6ff5464d95558b26">
+  
+
+      <link href="https://github.com/thrust/thrust/commits/master.atom" rel="alternate" title="Recent Commits to thrust:master" type="application/atom+xml">
+
+  <meta name="go-import" content="github.com/thrust/thrust git https://github.com/thrust/thrust.git">
+
+  <meta name="octolytics-dimension-user_id" content="1384216" /><meta name="octolytics-dimension-user_login" content="thrust" /><meta name="octolytics-dimension-repository_id" content="3633213" /><meta name="octolytics-dimension-repository_nwo" content="thrust/thrust" /><meta name="octolytics-dimension-repository_public" content="true" /><meta name="octolytics-dimension-repository_is_fork" content="false" /><meta name="octolytics-dimension-repository_network_root_id" content="3633213" /><meta name="octolytics-dimension-repository_network_root_nwo" content="thrust/thrust" /><meta name="octolytics-dimension-repository_explore_github_marketplace_ci_cta_shown" content="false" />
+
+
+
+
+  <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
+
+  <meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors">
+
+  <link rel="mask-icon" href="https://assets-cdn.github.com/pinned-octocat.svg" color="#000000">
+  <link rel="icon" type="image/x-icon" class="js-site-favicon" href="https://assets-cdn.github.com/favicon.ico">
+
+<meta name="theme-color" content="#1e2327">
+
+
+  <meta name="u2f-support" content="true">
+
+  <link rel="manifest" href="/manifest.json" crossOrigin="use-credentials">
+
+  </head>
+
+  <body class="logged-in env-production page-responsive min-width-0">
+    
+
+  <div class="position-relative js-header-wrapper ">
+    <a href="#start-of-content" tabindex="1" class="p-3 bg-blue text-white show-on-focus js-skip-to-content">Skip to content</a>
+    <div id="js-pjax-loader-bar" class="pjax-loader-bar"><div class="progress"></div></div>
+
+    
+    
+    
+
+
+        
+<header class="Header js-details-container Details f5" role="banner">
+  <div class="d-lg-flex p-responsive flex-justify-between px-3 ">
+    <div class="d-flex flex-justify-between flex-items-center">
+      <div class="d-none d-lg-block">
+        <a class="header-logo-invertocat" href="https://github.com/" data-hotkey="g d" aria-label="Homepage" data-ga-click="Header, go to dashboard, icon:logo">
+  <svg height="32" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+</a>
+
+      </div>
+
+
+        <button class="btn-link mt-1 js-details-target d-lg-none" type="button" aria-label="Toggle navigation" aria-expanded="false">
+          <svg height="24" class="octicon octicon-three-bars notification-indicator" viewBox="0 0 12 16" version="1.1" width="18" aria-hidden="true"><path fill-rule="evenodd" d="M11.41 9H.59C0 9 0 8.59 0 8c0-.59 0-1 .59-1H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1h.01zm0-4H.59C0 5 0 4.59 0 4c0-.59 0-1 .59-1H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1h.01zM.59 11H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1H.59C0 13 0 12.59 0 12c0-.59 0-1 .59-1z"/></svg>
+        </button>
+        <div class="d-lg-none css-truncate css-truncate-target width-fit px-3">
+          
+              <svg class="octicon octicon-repo" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z"/></svg>
+    <strong><a class="text-white" href="/thrust">thrust</a></strong>
+    /
+    <strong><a class="text-white" href="/thrust/thrust">thrust</a></strong>
+
+
+        </div>
+        <div class="d-flex d-lg-none">
+          <div>
+            
+    <a aria-label="You have unread notifications" class="notification-indicator tooltipped tooltipped-s my-2 my-lg-0 js-socket-channel js-notification-indicator" data-hotkey="g n" data-ga-click="Header, go to notifications, icon:unread" data-channel="notification-changed:9398385" href="/notifications">
+        <span class="mail-status unread"></span>
+        <svg class="octicon octicon-bell" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 12v1H0v-1l.73-.58c.77-.77.81-2.55 1.19-4.42C2.69 3.23 6 2 6 2c0-.55.45-1 1-1s1 .45 1 1c0 0 3.39 1.23 4.16 5 .38 1.88.42 3.66 1.19 4.42l.66.58H14zm-7 4c1.11 0 2-.89 2-2H5c0 1.11.89 2 2 2z"/></svg>
+</a>
+          </div>
+        </div>
+
+    </div>
+
+    <div class="HeaderMenu d-lg-flex flex-justify-between flex-auto">
+      <nav class="d-lg-flex" aria-label="Global">
+            <div class="py-3 py-lg-0">
+              <div class="header-search scoped-search site-scoped-search js-site-search position-relative js-jump-to"
+  role="combobox"
+  aria-owns="jump-to-results"
+  aria-label="Search or jump to"
+  aria-haspopup="listbox"
+  aria-expanded="false"
+>
+  <div class="position-relative">
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="js-site-search-form" data-scope-type="Repository" data-scope-id="3633213" data-scoped-search-url="/thrust/thrust/search" data-unscoped-search-url="/search" action="/thrust/thrust/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+      <label class="form-control header-search-wrapper header-search-wrapper-jump-to position-relative d-flex flex-justify-between flex-items-center js-chromeless-input-container">
+        <input type="text"
+          class="form-control header-search-input jump-to-field js-jump-to-field js-site-search-focus js-site-search-field is-clearable"
+          data-hotkey="s,/"
+          name="q"
+          value=""
+          placeholder="Search or jump to…"
+          data-unscoped-placeholder="Search or jump to…"
+          data-scoped-placeholder="Search or jump to…"
+          autocapitalize="off"
+          aria-autocomplete="list"
+          aria-controls="jump-to-results"
+          aria-label="Search or jump to…"
+          data-jump-to-suggestions-path="/_graphql/GetSuggestedNavigationDestinations#csrf-token=aoVjq9s6PLls0/fsZ9QiJMtExT35CgOYqzjUc8PBsfRjGr1Tq/tKRAyaegl75wBIa70irNt0dy7IRZkBAUnoyQ=="
+          spellcheck="false"
+          autocomplete="off"
+          >
+          <input type="hidden" class="js-site-search-type-field" name="type" >
+            <img src="https://assets-cdn.github.com/images/search-shortcut-hint.svg" alt="" class="mr-2 header-search-key-slash">
+
+            <div class="Box position-absolute overflow-hidden d-none jump-to-suggestions js-jump-to-suggestions-container">
+              <ul class="d-none js-jump-to-suggestions-template-container">
+                <li class="d-flex flex-justify-start flex-items-center p-0 f5 navigation-item js-navigation-item" role="option">
+                  <a tabindex="-1" class="no-underline d-flex flex-auto flex-items-center p-2 jump-to-suggestions-path js-jump-to-suggestion-path js-navigation-open" href="">
+                    <div class="jump-to-octicon js-jump-to-octicon flex-shrink-0 mr-2 text-center d-none">
+                      <svg height="16" width="16" class="octicon octicon-repo flex-shrink-0 js-jump-to-octicon-repo d-none" title="Repository" aria-label="Repository" viewBox="0 0 12 16" version="1.1" role="img"><path fill-rule="evenodd" d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z"/></svg>
+                      <svg height="16" width="16" class="octicon octicon-project flex-shrink-0 js-jump-to-octicon-project d-none" title="Project" aria-label="Project" viewBox="0 0 15 16" version="1.1" role="img"><path fill-rule="evenodd" d="M10 12h3V2h-3v10zm-4-2h3V2H6v8zm-4 4h3V2H2v12zm-1 1h13V1H1v14zM14 0H1a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h13a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1z"/></svg>
+                      <svg height="16" width="16" class="octicon octicon-search flex-shrink-0 js-jump-to-octicon-search d-none" title="Search" aria-label="Search" viewBox="0 0 16 16" version="1.1" role="img"><path fill-rule="evenodd" d="M15.7 13.3l-3.81-3.83A5.93 5.93 0 0 0 13 6c0-3.31-2.69-6-6-6S1 2.69 1 6s2.69 6 6 6c1.3 0 2.48-.41 3.47-1.11l3.83 3.81c.19.2.45.3.7.3.25 0 .52-.09.7-.3a.996.996 0 0 0 0-1.41v.01zM7 10.7c-2.59 0-4.7-2.11-4.7-4.7 0-2.59 2.11-4.7 4.7-4.7 2.59 0 4.7 2.11 4.7 4.7 0 2.59-2.11 4.7-4.7 4.7z"/></svg>
+                    </div>
+
+                    <img class="avatar mr-2 flex-shrink-0 js-jump-to-suggestion-avatar d-none" alt="" aria-label="Team" src="" width="28" height="28">
+
+                    <div class="jump-to-suggestion-name js-jump-to-suggestion-name flex-auto overflow-hidden text-left no-wrap css-truncate css-truncate-target">
+                    </div>
+
+                    <div class="border rounded-1 flex-shrink-0 bg-gray px-1 text-gray-light ml-1 f6 d-none js-jump-to-badge-search">
+                      <span class="js-jump-to-badge-search-text-default d-none" aria-label="in this repository">
+                        In this repository
+                      </span>
+                      <span class="js-jump-to-badge-search-text-global d-none" aria-label="in all of GitHub">
+                        All GitHub
+                      </span>
+                      <span aria-hidden="true" class="d-inline-block ml-1 v-align-middle">↵</span>
+                    </div>
+
+                    <div aria-hidden="true" class="border rounded-1 flex-shrink-0 bg-gray px-1 text-gray-light ml-1 f6 d-none d-on-nav-focus js-jump-to-badge-jump">
+                      Jump to
+                      <span class="d-inline-block ml-1 v-align-middle">↵</span>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+              <ul class="d-none js-jump-to-no-results-template-container">
+                <li class="d-flex flex-justify-center flex-items-center p-3 f5 d-none">
+                  <span class="text-gray">No suggested jump to results</span>
+                </li>
+              </ul>
+
+              <ul id="jump-to-results" role="listbox" class="js-navigation-container jump-to-suggestions-results-container js-jump-to-suggestions-results-container" >
+                <li class="d-flex flex-justify-center flex-items-center p-0 f5">
+                  <img src="https://assets-cdn.github.com/images/spinners/octocat-spinner-128.gif" alt="Octocat Spinner Icon" class="m-2" width="28">
+                </li>
+              </ul>
+            </div>
+      </label>
+</form>  </div>
+</div>
+
+            </div>
+
+          <ul class="d-lg-flex pl-lg-2 flex-items-center text-bold list-style-none">
+            <li class="d-lg-none">
+              <a class="HeaderNavlink px-lg-2 py-2 py-lg-0" data-ga-click="Header, click, Nav menu - item:dashboard:user" aria-label="Dashboard" href="/dashboard">
+                Dashboard
+</a>            </li>
+            <li>
+              <a class="js-selected-navigation-item HeaderNavlink px-lg-2 py-2 py-lg-0" data-hotkey="g p" data-ga-click="Header, click, Nav menu - item:pulls context:user" aria-label="Pull requests you created" data-selected-links="/pulls /pulls/assigned /pulls/mentioned /pulls" href="/pulls">
+                Pull requests
+</a>            </li>
+            <li>
+              <a class="js-selected-navigation-item HeaderNavlink px-lg-2 py-2 py-lg-0" data-hotkey="g i" data-ga-click="Header, click, Nav menu - item:issues context:user" aria-label="Issues you created" data-selected-links="/issues /issues/assigned /issues/mentioned /issues" href="/issues">
+                Issues
+</a>            </li>
+              <li class="position-relative">
+                <a class="js-selected-navigation-item HeaderNavlink px-lg-2 py-2 py-lg-0" data-ga-click="Header, click, Nav menu - item:marketplace context:user" data-octo-click="marketplace_click" data-octo-dimensions="location:nav_bar" data-selected-links=" /marketplace" href="/marketplace">
+                   Marketplace
+</a>                  
+              </li>
+            <li>
+              <a class="js-selected-navigation-item HeaderNavlink px-lg-2 py-2 py-lg-0" data-ga-click="Header, click, Nav menu - item:explore" data-selected-links="/explore /trending /trending/developers /integrations /integrations/feature/code /integrations/feature/collaborate /integrations/feature/ship showcases showcases_search showcases_landing /explore" href="/explore">
+                Explore
+</a>            </li>
+          </ul>
+      </nav>
+
+      <div class="d-lg-flex">
+        
+<ul class="user-nav d-lg-flex flex-items-center list-style-none" id="user-links">
+  <li class="dropdown">
+    <span class="d-none d-lg-block  px-2">
+      
+    <a aria-label="You have unread notifications" class="notification-indicator tooltipped tooltipped-s my-2 my-lg-0 js-socket-channel js-notification-indicator" data-hotkey="g n" data-ga-click="Header, go to notifications, icon:unread" data-channel="notification-changed:9398385" href="/notifications">
+        <span class="mail-status unread"></span>
+        <svg class="octicon octicon-bell" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 12v1H0v-1l.73-.58c.77-.77.81-2.55 1.19-4.42C2.69 3.23 6 2 6 2c0-.55.45-1 1-1s1 .45 1 1c0 0 3.39 1.23 4.16 5 .38 1.88.42 3.66 1.19 4.42l.66.58H14zm-7 4c1.11 0 2-.89 2-2H5c0 1.11.89 2 2 2z"/></svg>
+</a>
+    </span>
+  </li>
+
+  <li class="dropdown">
+    <details class="details-overlay details-reset d-none d-lg-flex px-lg-2 py-2 py-lg-0 flex-items-center">
+      <summary class="HeaderNavlink"
+         aria-label="Create new…"
+         data-ga-click="Header, create new, icon:add">
+        <svg class="octicon octicon-plus float-left mr-1 mt-1" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 9H7v5H5V9H0V7h5V2h2v5h5v2z"/></svg>
+        <span class="dropdown-caret mt-1"></span>
+      </summary>
+      <details-menu class="dropdown-menu dropdown-menu-sw">
+        
+<a role="menuitem" class="dropdown-item" href="/new" data-ga-click="Header, create new repository">
+  New repository
+</a>
+
+  <a role="menuitem" class="dropdown-item" href="/new/import" data-ga-click="Header, import a repository">
+    Import repository
+  </a>
+
+<a role="menuitem" class="dropdown-item" href="https://gist.github.com/" data-ga-click="Header, create new gist">
+  New gist
+</a>
+
+  <a role="menuitem" class="dropdown-item" href="/organizations/new" data-ga-click="Header, create new organization">
+    New organization
+  </a>
+
+
+  <div class="dropdown-divider"></div>
+  <div class="dropdown-header">
+    <span title="thrust/thrust">This repository</span>
+  </div>
+    <a role="menuitem" class="dropdown-item" href="/thrust/thrust/issues/new" data-ga-click="Header, create new issue">
+      New issue
+    </a>
+
+
+      </details-menu>
+    </details>
+  </li>
+
+  <li class="dropdown">
+      <a class="d-lg-none HeaderNavlink name tooltipped tooltipped-sw px-lg-2 py-2 py-lg-0" href="/Chaztikov"
+         aria-label="View profile and more"
+         aria-expanded="false"
+         aria-haspopup="false">
+        <img alt="@Chaztikov" class="avatar float-left mr-1" src="https://avatars3.githubusercontent.com/u/9398385?s=40&amp;v=4" height="20" width="20">
+        <span class="text-bold">Chaztikov</span>
+      </a>
+
+    <details class="details-overlay details-reset d-none d-lg-flex pl-lg-2 py-2 py-lg-0 flex-items-center">
+      <summary class="HeaderNavlink name mt-1"
+        aria-label="View profile and more"
+        data-ga-click="Header, show menu, icon:avatar">
+        <img alt="@Chaztikov" class="avatar float-left mr-1" src="https://avatars3.githubusercontent.com/u/9398385?s=40&amp;v=4" height="20" width="20">
+        <span class="dropdown-caret"></span>
+      </summary>
+      <details-menu class="dropdown-menu dropdown-menu-sw">
+        <ul>
+          <li class="header-nav-current-user css-truncate"><a role="menuitem" class="no-underline user-profile-link px-3 pt-2 pb-2 mb-n2 mt-n1 d-block" href="/Chaztikov" data-ga-click="Header, go to profile, text:Signed in as">Signed in as <strong class="css-truncate-target">Chaztikov</strong></a></li>
+          <li class="dropdown-divider"></li>
+          <li><a role="menuitem" class="dropdown-item" href="/Chaztikov" data-ga-click="Header, go to profile, text:your profile">Your profile</a></li>
+          <li><a role="menuitem" class="dropdown-item" href="/Chaztikov?tab=repositories" data-ga-click="Header, go to repositories, text:your repositories">Your repositories</a></li>
+
+
+          <li><a role="menuitem" class="dropdown-item" href="/Chaztikov?tab=stars" data-ga-click="Header, go to starred repos, text:your stars">Your stars</a></li>
+            <li><a role="menuitem" class="dropdown-item" href="https://gist.github.com/" data-ga-click="Header, your gists, text:your gists">Your gists</a></li>
+          <li class="dropdown-divider"></li>
+          <li><a role="menuitem" class="dropdown-item" href="https://help.github.com" data-ga-click="Header, go to help, text:help">Help</a></li>
+          <li><a role="menuitem" class="dropdown-item" href="/settings/profile" data-ga-click="Header, go to settings, icon:settings">Settings</a></li>
+          <li>
+            <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="logout-form" action="/logout" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="92qVpO0yKez96mGZu7QPmPt3LhshkpNKyb0FOJxzJ+BC6haE6/JMYDOvSkdhoX6jZufvCpntoQCT+IalnK3/+w==" />
+              <button type="submit" class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout" role="menuitem">
+                Sign out
+              </button>
+</form>          </li>
+        </ul>
+      </details-menu>
+    </details>
+  </li>
+</ul>
+
+
+          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="d-lg-none" action="/logout" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="ALqSMoGc0Diki0GPXAb84Z+CYXIkabUhIgZ4Vb7MY7m1OhESh1y1tGrOalGGE43aAhKgY5wWh2t4Q/vIvhK7og==" />
+            <button type="submit" class="btn-link HeaderNavlink d-block width-full text-left py-2 text-bold" data-ga-click="Header, sign out, icon:logout" style="padding-left: 2px;">
+              <svg class="octicon octicon-sign-out v-align-middle" style="margin-right: 2px;" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 9V7H8V5h4V3l4 3-4 3zm-2 3H6V3L2 1h8v3h1V1c0-.55-.45-1-1-1H1C.45 0 0 .45 0 1v11.38c0 .39.22.73.55.91L6 16.01V13h4c.55 0 1-.45 1-1V8h-1v4z"/></svg>
+              Sign out
+            </button>
+</form>
+        <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="sr-only right-0" action="/logout" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="vD+20mMqk8OdWMBb8WH3b+l+CaAchvaDMCOkUOYYDcgJvzXyZer2T1Md64UrdIZUdO7IsaT5xMlqZifN5sbV0w==" />
+          <button type="submit" class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout">
+            Sign out
+          </button>
+</form>      </div>
+    </div>
+  </div>
+</header>
+
+      
+
+  </div>
+
+  <div id="start-of-content" class="show-on-focus"></div>
+
+    <div id="js-flash-container">
+
+
+</div>
+
+
+
+  <div role="main" class="application-main " >
+        <div itemscope itemtype="http://schema.org/SoftwareSourceCode" class="">
+    <div  >
+      
+
+
+
+  
+
+
+
+  <div class="pagehead repohead instapaper_ignore readability-menu experiment-repo-nav pt-0 pt-lg-3 ">
+    <div class="repohead-details-container clearfix container-lg p-responsive d-none d-lg-block">
+
+      <ul class="pagehead-actions">
+  <li>
+        <!-- '"` --><!-- </textarea></xmp> --></option></form><form data-remote="true" class="js-social-form js-social-container" action="/notifications/subscribe" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="h3NgP0sCpg5XPhjwb3APgADaiMOFgpyHVtW7A5VuVfg3SgChUQoLuuclyCF4LhdBhbFPM5fFksEUcUXcnLmERA==" />      <input type="hidden" name="repository_id" id="repository_id" value="3633213" class="form-control" />
+
+      <details class="details-reset details-overlay select-menu float-left">
+        <summary class="btn btn-sm btn-with-count select-menu-button" data-ga-click="Repository, click Watch settings, action:wiki#show">
+          <span data-menu-button>
+              <svg class="octicon octicon-eye v-align-text-bottom" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"/></svg>
+              Unwatch
+          </span>
+        </summary>
+        <details-menu class="select-menu-modal position-absolute mt-5" style="z-index: 99;">
+          <div class="select-menu-header">
+            <span class="select-menu-title">Notifications</span>
+          </div>
+          <div class="select-menu-list">
+            <button type="submit" name="do" value="included" class="select-menu-item width-full" aria-checked="false" role="menuitemradio">
+              <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"/></svg>
+              <div class="select-menu-item-text">
+                <span class="select-menu-item-heading">Not watching</span>
+                <span class="description">Be notified only when participating or @mentioned.</span>
+                <span class="hidden-select-button-text" data-menu-button-contents>
+                  <svg class="octicon octicon-eye v-align-text-bottom" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"/></svg>
+                  Watch
+                </span>
+              </div>
+            </button>
+
+              <button type="submit" name="do" value="release_only" class="select-menu-item width-full" aria-checked="false" role="menuitemradio">
+                <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"/></svg>
+                <div class="select-menu-item-text">
+                  <span class="select-menu-item-heading">Releases only</span>
+                  <span class="description">Be notified of new releases, and when participating or @mentioned.</span>
+                  <span class="hidden-select-button-text" data-menu-button-contents>
+                    <svg class="octicon octicon-eye v-align-text-bottom" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"/></svg>
+                    Unwatch releases
+                  </span>
+                </div>
+              </button>
+
+            <button type="submit" name="do" value="subscribed" class="select-menu-item width-full" aria-checked="true" role="menuitemradio">
+              <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"/></svg>
+              <div class="select-menu-item-text">
+                <span class="select-menu-item-heading">Watching</span>
+                <span class="description">Be notified of all conversations.</span>
+                <span class="hidden-select-button-text" data-menu-button-contents>
+                  <svg class="octicon octicon-eye v-align-text-bottom" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"/></svg>
+                  Unwatch
+                </span>
+              </div>
+            </button>
+
+            <button type="submit" name="do" value="ignore" class="select-menu-item width-full" aria-checked="false" role="menuitemradio">
+              <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"/></svg>
+              <div class="select-menu-item-text">
+                <span class="select-menu-item-heading">Ignoring</span>
+                <span class="description">Never be notified.</span>
+                <span class="hidden-select-button-text" data-menu-button-contents>
+                  <svg class="octicon octicon-mute v-align-text-bottom" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 2.81v10.38c0 .67-.81 1-1.28.53L3 10H1c-.55 0-1-.45-1-1V7c0-.55.45-1 1-1h2l3.72-3.72C7.19 1.81 8 2.14 8 2.81zm7.53 3.22l-1.06-1.06-1.97 1.97-1.97-1.97-1.06 1.06L11.44 8 9.47 9.97l1.06 1.06 1.97-1.97 1.97 1.97 1.06-1.06L13.56 8l1.97-1.97z"/></svg>
+                  Stop ignoring
+                </span>
+              </div>
+            </button>
+          </div>
+        </details-menu>
+      </details>
+      <a class="social-count js-social-count"
+        href="/thrust/thrust/watchers"
+        aria-label="203 users are watching this repository">
+        203
+      </a>
+</form>
+  </li>
+
+  <li>
+    
+  <div class="js-toggler-container js-social-container starring-container ">
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="starred js-social-form" action="/thrust/thrust/unstar" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="od2/qodJkBe8pifDgWKuun7Qy2wT/0Yx8nrhbP1H041IA8f+f3gVFJW857LU8dVKQ6zAs+oIzBkvj3tRk3Lz7Q==" />
+      <input type="hidden" name="context" value="repository"></input>
+      <button
+        type="submit"
+        class="btn btn-sm btn-with-count js-toggler-target"
+        aria-label="Unstar this repository" title="Unstar thrust/thrust"
+        data-ga-click="Repository, click unstar button, action:wiki#show; text:Unstar">
+        <svg class="octicon octicon-star v-align-text-bottom" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"/></svg>
+        Unstar
+      </button>
+        <a class="social-count js-social-count" href="/thrust/thrust/stargazers"
+           aria-label="2010 users starred this repository">
+          2,010
+        </a>
+</form>
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="unstarred js-social-form" action="/thrust/thrust/star" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="uvzDyK/5KxcaLcrYQcIG1FLtLumTaIn5yQka4NKzGux96H8X6CcveXSFUcatOAH9WCyGp6Evj244Cm+ngzf/Aw==" />
+      <input type="hidden" name="context" value="repository"></input>
+      <button
+        type="submit"
+        class="btn btn-sm btn-with-count js-toggler-target"
+        aria-label="Star this repository" title="Star thrust/thrust"
+        data-ga-click="Repository, click star button, action:wiki#show; text:Star">
+        <svg class="octicon octicon-star v-align-text-bottom" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"/></svg>
+        Star
+      </button>
+        <a class="social-count js-social-count" href="/thrust/thrust/stargazers"
+           aria-label="2010 users starred this repository">
+          2,010
+        </a>
+</form>  </div>
+
+  </li>
+
+  <li>
+          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="btn-with-count" action="/thrust/thrust/fork" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="b/lqVfRnhy21g7mKyDH0hcVtufZxhcXVQF8BQrB84ROEZqhAFO2i+uV+53L7/bHS/L8CxkP2lfC+YgoyS4JeGA==" />
+            <button
+                type="submit"
+                class="btn btn-sm btn-with-count"
+                data-ga-click="Repository, show fork modal, action:wiki#show; text:Fork"
+                title="Fork your own copy of thrust/thrust to your account"
+                aria-label="Fork your own copy of thrust/thrust to your account">
+              <svg class="octicon octicon-repo-forked v-align-text-bottom" viewBox="0 0 10 16" version="1.1" width="10" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1a1.993 1.993 0 0 0-1 3.72V6L5 8 3 6V4.72A1.993 1.993 0 0 0 2 1a1.993 1.993 0 0 0-1 3.72V6.5l3 3v1.78A1.993 1.993 0 0 0 5 15a1.993 1.993 0 0 0 1-3.72V9.5l3-3V4.72A1.993 1.993 0 0 0 8 1zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3 10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3-10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg>
+              Fork
+            </button>
+</form>
+    <a href="/thrust/thrust/network/members" class="social-count"
+       aria-label="420 users forked this repository">
+      420
+    </a>
+  </li>
+</ul>
+
+      <h1 class="public ">
+  <svg class="octicon octicon-repo" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z"/></svg>
+  <span class="author" itemprop="author"><a class="url fn" rel="author" data-hovercard-type="organization" data-hovercard-url="/orgs/thrust/hovercard" href="/thrust">thrust</a></span><!--
+--><span class="path-divider">/</span><!--
+--><strong itemprop="name"><a data-pjax="#js-repo-pjax-container" href="/thrust/thrust">thrust</a></strong>
+
+</h1>
+
+    </div>
+    
+<nav class="reponav js-repo-nav js-sidenav-container-pjax container-lg p-responsive d-none d-lg-block"
+     itemscope
+     itemtype="http://schema.org/BreadcrumbList"
+    aria-label="Repository"
+     data-pjax="#js-repo-pjax-container">
+
+  <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+    <a class="js-selected-navigation-item reponav-item" itemprop="url" data-hotkey="g c" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches repo_packages /thrust/thrust" href="/thrust/thrust">
+      <svg class="octicon octicon-code" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M9.5 3L8 4.5 11.5 8 8 11.5 9.5 13 14 8 9.5 3zm-5 0L0 8l4.5 5L6 11.5 2.5 8 6 4.5 4.5 3z"/></svg>
+      <span itemprop="name">Code</span>
+      <meta itemprop="position" content="1">
+</a>  </span>
+
+    <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+      <a itemprop="url" data-hotkey="g i" class="js-selected-navigation-item reponav-item" data-selected-links="repo_issues repo_labels repo_milestones /thrust/thrust/issues" href="/thrust/thrust/issues">
+        <svg class="octicon octicon-issue-opened" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"/></svg>
+        <span itemprop="name">Issues</span>
+        <span class="Counter">166</span>
+        <meta itemprop="position" content="2">
+</a>    </span>
+
+  <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+    <a data-hotkey="g p" itemprop="url" class="js-selected-navigation-item reponav-item" data-selected-links="repo_pulls checks /thrust/thrust/pulls" href="/thrust/thrust/pulls">
+      <svg class="octicon octicon-git-pull-request" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M11 11.28V5c-.03-.78-.34-1.47-.94-2.06C9.46 2.35 8.78 2.03 8 2H7V0L4 3l3 3V4h1c.27.02.48.11.69.31.21.2.3.42.31.69v6.28A1.993 1.993 0 0 0 10 15a1.993 1.993 0 0 0 1-3.72zm-1 2.92c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zM4 3c0-1.11-.89-2-2-2a1.993 1.993 0 0 0-1 3.72v6.56A1.993 1.993 0 0 0 2 15a1.993 1.993 0 0 0 1-3.72V4.72c.59-.34 1-.98 1-1.72zm-.8 10c0 .66-.55 1.2-1.2 1.2-.65 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg>
+      <span itemprop="name">Pull requests</span>
+      <span class="Counter">10</span>
+      <meta itemprop="position" content="3">
+</a>  </span>
+
+
+    <a data-hotkey="g b" class="js-selected-navigation-item reponav-item" data-selected-links="repo_projects new_repo_project repo_project /thrust/thrust/projects" href="/thrust/thrust/projects">
+      <svg class="octicon octicon-project" viewBox="0 0 15 16" version="1.1" width="15" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10 12h3V2h-3v10zm-4-2h3V2H6v8zm-4 4h3V2H2v12zm-1 1h13V1H1v14zM14 0H1a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h13a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1z"/></svg>
+      Projects
+      <span class="Counter" >0</span>
+</a>
+
+    <a class="js-selected-navigation-item selected reponav-item" data-hotkey="g w" aria-current="page" data-selected-links="repo_wiki /thrust/thrust/wiki" href="/thrust/thrust/wiki">
+      <svg class="octicon octicon-book" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M3 5h4v1H3V5zm0 3h4V7H3v1zm0 2h4V9H3v1zm11-5h-4v1h4V5zm0 2h-4v1h4V7zm0 2h-4v1h4V9zm2-6v9c0 .55-.45 1-1 1H9.5l-1 1-1-1H2c-.55 0-1-.45-1-1V3c0-.55.45-1 1-1h5.5l1 1 1-1H15c.55 0 1 .45 1 1zm-8 .5L7.5 3H2v9h6V3.5zm7-.5H9.5l-.5.5V12h6V3z"/></svg>
+      Wiki
+</a>
+  <a class="js-selected-navigation-item reponav-item" data-selected-links="repo_graphs repo_contributors dependency_graph pulse alerts security /thrust/thrust/pulse" href="/thrust/thrust/pulse">
+    <svg class="octicon octicon-graph" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M16 14v1H0V0h1v14h15zM5 13H3V8h2v5zm4 0H7V3h2v10zm4 0h-2V6h2v7z"/></svg>
+    Insights
+</a>
+
+</nav>
+
+  <div class="reponav-wrapper reponav-small d-lg-none">
+  <nav class="reponav js-reponav text-center no-wrap"
+       itemscope
+       itemtype="http://schema.org/BreadcrumbList">
+
+    <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+      <a class="js-selected-navigation-item reponav-item" itemprop="url" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches repo_packages /thrust/thrust" href="/thrust/thrust">
+        <span itemprop="name">Code</span>
+        <meta itemprop="position" content="1">
+</a>    </span>
+
+      <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+        <a itemprop="url" class="js-selected-navigation-item reponav-item" data-selected-links="repo_issues repo_labels repo_milestones /thrust/thrust/issues" href="/thrust/thrust/issues">
+          <span itemprop="name">Issues</span>
+          <span class="Counter">166</span>
+          <meta itemprop="position" content="2">
+</a>      </span>
+
+    <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+      <a itemprop="url" class="js-selected-navigation-item reponav-item" data-selected-links="repo_pulls checks /thrust/thrust/pulls" href="/thrust/thrust/pulls">
+        <span itemprop="name">Pull requests</span>
+        <span class="Counter">10</span>
+        <meta itemprop="position" content="3">
+</a>    </span>
+
+    <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+      <a itemprop="url" class="js-selected-navigation-item reponav-item" data-selected-links="repo_projects new_repo_project repo_project /thrust/thrust/projects" href="/thrust/thrust/projects">
+        <span itemprop="name">Projects</span>
+        <span class="Counter">0</span>
+        <meta itemprop="position" content="4">
+</a>    </span>
+
+      <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+        <a itemprop="url" class="js-selected-navigation-item selected reponav-item" aria-current="page" data-selected-links="repo_wiki /thrust/thrust/wiki" href="/thrust/thrust/wiki">
+          <span itemprop="name">Wiki</span>
+          <meta itemprop="position" content="5">
+</a>      </span>
+
+    <a class="js-selected-navigation-item reponav-item" data-selected-links="pulse /thrust/thrust/pulse" href="/thrust/thrust/pulse">
+      Pulse
+</a>
+      <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+        <a itemprop="url" class="js-selected-navigation-item reponav-item" data-selected-links="community /thrust/thrust/community" href="/thrust/thrust/community">
+          Community
+</a>      </span>
+
+  </nav>
+</div>
+
+
+  </div>
+
+<div class="container-lg new-discussion-timeline experiment-repo-nav  p-responsive">
+  <div class="repository-content ">
+
+    
+  <div id="wiki-wrapper" class="page">
+  
+
+  <div class="d-flex flex-column flex-md-row gh-header">
+    <h1 class="flex-auto min-width-0 mb-2 mb-md-0 mr-0 mr-md-2 gh-header-title instapaper_title">Quick Start Guide</h1>
+
+      <div class="mt-0 mt-lg-1 flex-shrink-0 gh-header-actions">
+        <a href="#wiki-pages-box" class="d-md-none ">Jump to bottom</a>
+
+      </div>
+  </div>
+
+    <div class="mt-2 mt-md-1 pb-3 gh-header-meta">
+      Bryce Adelstein Lelbach aka wash edited this page <relative-time datetime="2017-09-21T21:17:23Z">Sep 21, 2017</relative-time>
+      &middot;
+      <a href="/thrust/thrust/wiki/Quick-Start-Guide/_history" class="muted-link">
+        12 revisions
+      </a>
+    </div>
+
+  <div id="wiki-content" class="d-flex flex-column flex-md-row">
+    <div id="wiki-body" class="mt-4 flex-auto min-width-0 gollum-markdown-content instapaper_body">
+        <div class="markdown-body">
+          <h2>
+<a id="user-content-introduction" class="anchor" href="#introduction" aria-hidden="true"><svg class="octicon octicon-link" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Introduction</h2>
+<p>Thrust is a C++ template library for parallel platforms based on the Standard Template Library (STL). Thrust allows you to implement high performance parallel applications with minimal programming effort through a high-level interface that is fully interoperable with technologies such as C++, CUDA, OpenMP, and TBB.</p>
+<p>Thrust provides a rich collection of data parallel primitives such as scan, sort, and reduce, which can be composed together to implement complex algorithms with concise, readable source code. By describing your computation in terms of these high-level abstractions you provide Thrust with the freedom to select the most efficient implementation automatically. As a result, Thrust can be utilized in rapid prototyping of CUDA applications, where programmer productivity matters most, as well as in production, where robustness and absolute performance are crucial.</p>
+<p>This document describes how to develop parallel applications with Thrust. The tutorial is intended to be accessible, even if you have limited C++ or parallel programming experience.</p>
+<h2>
+<a id="user-content-prerequisites" class="anchor" href="#prerequisites" aria-hidden="true"><svg class="octicon octicon-link" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Prerequisites</h2>
+<p>Thrust v1.6.0 is compatible with CUDA 4.1 (preferred) and CUDA 4.0. You can confirm that CUDA is installed by running <code>nvcc --version</code> on the command line. For example on a Linux system,</p>
+<pre><code>$ nvcc --version
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2011 NVIDIA Corporation
+Built on Thu_Jan_12_14:41:45_PST_2012
+Cuda compilation tools, release 4.1, V0.2.1221
+</code></pre>
+<p><strong>If you are using CUDA 4.0 or better then Thrust is already installed on your system and you can safely skip to the next section.</strong></p>
+<p>Since Thrust is a C++ template library there is nothing to "build". Simply download the newest version from the Downloads section and extract the contents of the zip file to a directory. We suggest installing Thrust to the CUDA include directory, which is usually</p>
+<ul>
+<li>
+<code>/usr/local/cuda/include/</code> on a Linux and Mac OSX</li>
+<li>
+<code>C:\CUDA\include\</code> on a Windows system</li>
+</ul>
+<p>If you are unable to install Thrust to the CUDA include directory, then you can place Thrust somewhere in your home directory, for example: <code>/home/nathan/libraries/</code>.</p>
+<p><strong>Warning:</strong> Do not install Thrust to a standard include path like <code>/usr/local/include/</code>. It appears that <code>nvcc</code> treats such paths differently than the suggestions above which causes errors like <code>error: expected primary-expression before ‘&lt;’ token.</code></p>
+<h3>
+<a id="user-content-simple-example" class="anchor" href="#simple-example" aria-hidden="true"><svg class="octicon octicon-link" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Simple Example</h3>
+<p>Let's compile a simple program with Thrust to make sure all the prerequisites are satisfied. Save the following source code to a file named <code>version.cu</code>.</p>
+<div class="highlight highlight-source-c++"><pre>#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>thrust/version.h<span class="pl-pds">&gt;</span></span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+
+<span class="pl-k">int</span> <span class="pl-en">main</span>(<span class="pl-k">void</span>)
+{
+  <span class="pl-k">int</span> <span class="pl-c1">major</span> = THRUST_MAJOR_VERSION;
+  <span class="pl-k">int</span> <span class="pl-c1">minor</span> = THRUST_MINOR_VERSION;
+
+  std::cout &lt;&lt; <span class="pl-s"><span class="pl-pds">"</span>Thrust v<span class="pl-pds">"</span></span> &lt;&lt; <span class="pl-c1">major</span> &lt;&lt; <span class="pl-s"><span class="pl-pds">"</span>.<span class="pl-pds">"</span></span> &lt;&lt; <span class="pl-c1">minor</span> &lt;&lt; std::endl;
+
+  <span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre></div>
+<p>Now compile <code>version.cu</code> with <code>nvcc</code>. If Thrust was installed to the CUDA include directory then the following commands should work.</p>
+<pre><code>$ ls
+thrust  version.cu
+$ nvcc version.cu -o version
+$ ls
+thrust  version version.cu
+$ ./version
+Thrust v1.6
+</code></pre>
+<p>If the thrust directory is placed somewhere else, use the <code>-I</code> option to tell <code>nvcc</code> where to look. For example, if thrust was placed in <code>/home/nathan/libraries/</code> then the following command should be used.</p>
+<pre><code>$ nvcc version.cu -o version -I /home/nathan/libraries/
+</code></pre>
+<h2>
+<a id="user-content-vectors" class="anchor" href="#vectors" aria-hidden="true"><svg class="octicon octicon-link" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Vectors</h2>
+<p>Thrust provides two <a href="http://en.wikipedia.org/wiki/Vector_(C++)" rel="nofollow">vector</a> containers, <code>host_vector</code> and <code>device_vector</code>. As the names suggest, <code>host_vector</code> is stored in the CPU's system or "host" memory while <code>device_vector</code> lives in the GPU's "device" memory. Thrust's vector containers are just like <code>std::vector</code> in the <a href="http://www.cplusplus.com/reference/stl/vector/" rel="nofollow">C++ Standard Library</a>. Like <code>std::vector</code>, <code>host_vector</code> and <code>device_vector</code> are generic containers (able to store any data type) that can be resized dynamically. The following source code illustrates the use of Thrust's vector containers.</p>
+<div class="highlight highlight-source-c++"><pre>#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>thrust/host_vector.h<span class="pl-pds">&gt;</span></span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>thrust/device_vector.h<span class="pl-pds">&gt;</span></span>
+
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+
+<span class="pl-k">int</span> <span class="pl-en">main</span>(<span class="pl-k">void</span>)
+{
+  <span class="pl-c"><span class="pl-c">//</span> H has storage for 4 integers</span>
+  thrust::host_vector&lt;<span class="pl-k">int</span>&gt; <span class="pl-c1">H</span>(<span class="pl-c1">4</span>);
+
+  <span class="pl-c"><span class="pl-c">//</span> initialize individual elements</span>
+  H[<span class="pl-c1">0</span>] = <span class="pl-c1">14</span>;
+  H[<span class="pl-c1">1</span>] = <span class="pl-c1">20</span>;
+  H[<span class="pl-c1">2</span>] = <span class="pl-c1">38</span>;
+  H[<span class="pl-c1">3</span>] = <span class="pl-c1">46</span>;
+    
+  <span class="pl-c"><span class="pl-c">//</span> H.size() returns the size of vector H</span>
+  std::cout &lt;&lt; <span class="pl-s"><span class="pl-pds">"</span>H has size <span class="pl-pds">"</span></span> &lt;&lt; H.<span class="pl-c1">size</span>() &lt;&lt; std::endl;
+
+  <span class="pl-c"><span class="pl-c">//</span> print contents of H</span>
+  <span class="pl-k">for</span>(<span class="pl-k">int</span> i = <span class="pl-c1">0</span>; i &lt; H.<span class="pl-c1">size</span>(); i++)
+  {
+    std::cout &lt;&lt; <span class="pl-s"><span class="pl-pds">"</span>H[<span class="pl-pds">"</span></span> &lt;&lt; i &lt;&lt; <span class="pl-s"><span class="pl-pds">"</span>] = <span class="pl-pds">"</span></span> &lt;&lt; H[i] &lt;&lt; std::endl;
+  }
+
+  <span class="pl-c"><span class="pl-c">//</span> resize H</span>
+  H.<span class="pl-c1">resize</span>(<span class="pl-c1">2</span>);
+    
+  std::cout &lt;&lt; <span class="pl-s"><span class="pl-pds">"</span>H now has size <span class="pl-pds">"</span></span> &lt;&lt; H.<span class="pl-c1">size</span>() &lt;&lt; std::endl;
+
+  <span class="pl-c"><span class="pl-c">//</span> Copy host_vector H to device_vector D</span>
+  thrust::device_vector&lt;<span class="pl-k">int</span>&gt; D = H;
+    
+  <span class="pl-c"><span class="pl-c">//</span> elements of D can be modified</span>
+  D[<span class="pl-c1">0</span>] = <span class="pl-c1">99</span>;
+  D[<span class="pl-c1">1</span>] = <span class="pl-c1">88</span>;
+    
+  <span class="pl-c"><span class="pl-c">//</span> print contents of D</span>
+  <span class="pl-k">for</span>(<span class="pl-k">int</span> i = <span class="pl-c1">0</span>; i &lt; D.<span class="pl-c1">size</span>(); i++)
+  {
+    std::cout &lt;&lt; <span class="pl-s"><span class="pl-pds">"</span>D[<span class="pl-pds">"</span></span> &lt;&lt; i &lt;&lt; <span class="pl-s"><span class="pl-pds">"</span>] = <span class="pl-pds">"</span></span> &lt;&lt; D[i] &lt;&lt; std::endl;
+  }
+
+  <span class="pl-c"><span class="pl-c">//</span> H and D are automatically destroyed when the function returns</span>
+  <span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre></div>
+<p>As this example shows, the <code>=</code> operator can be used to copy a <code>host_vector</code> to a <code>device_vector</code> (or vice-versa). The <code>=</code> operator can also be used to copy <code>host_vector</code> to <code>host_vector</code> or <code>device_vector</code> to <code>device_vector</code>. Also note that individual elements of a <code>device_vector</code> can be accessed using the standard bracket notation. However, because each of these accesses requires a call to <code>cudaMemcpy</code>, they should be used sparingly. We'll look at some more efficient techniques later.</p>
+<p>It's often useful to initialize all the elements of a vector to a specific value, or to copy only a certain set of values from one vector to another. Thrust provides a few ways to do these kinds of operations.</p>
+<div class="highlight highlight-source-c++"><pre>#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>thrust/host_vector.h<span class="pl-pds">&gt;</span></span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>thrust/device_vector.h<span class="pl-pds">&gt;</span></span>
+
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>thrust/copy.h<span class="pl-pds">&gt;</span></span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>thrust/fill.h<span class="pl-pds">&gt;</span></span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>thrust/sequence.h<span class="pl-pds">&gt;</span></span>
+
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+
+<span class="pl-k">int</span> <span class="pl-en">main</span>(<span class="pl-k">void</span>)
+{
+  <span class="pl-c"><span class="pl-c">//</span> initialize all ten integers of a device_vector to 1</span>
+  thrust::device_vector&lt;<span class="pl-k">int</span>&gt; <span class="pl-c1">D</span>(<span class="pl-c1">10</span>, <span class="pl-c1">1</span>);
+
+  <span class="pl-c"><span class="pl-c">//</span> set the first seven elements of a vector to 9</span>
+  <span class="pl-c1">thrust::fill</span>(D.<span class="pl-c1">begin</span>(), D.<span class="pl-c1">begin</span>() + <span class="pl-c1">7</span>, <span class="pl-c1">9</span>);
+
+  <span class="pl-c"><span class="pl-c">//</span> initialize a host_vector with the first five elements of D</span>
+  thrust::host_vector&lt;<span class="pl-k">int</span>&gt; <span class="pl-c1">H</span>(D.<span class="pl-c1">begin</span>(), D.<span class="pl-c1">begin</span>() + <span class="pl-c1">5</span>);
+
+  <span class="pl-c"><span class="pl-c">//</span> set the elements of H to 0, 1, 2, 3, ...</span>
+  <span class="pl-c1">thrust::sequence</span>(H.<span class="pl-c1">begin</span>(), H.<span class="pl-c1">end</span>());
+
+  <span class="pl-c"><span class="pl-c">//</span> copy all of H back to the beginning of D</span>
+  <span class="pl-c1">thrust::copy</span>(H.<span class="pl-c1">begin</span>(), H.<span class="pl-c1">end</span>(), D.<span class="pl-c1">begin</span>());
+
+  <span class="pl-c"><span class="pl-c">//</span> print D</span>
+  <span class="pl-k">for</span>(<span class="pl-k">int</span> i = <span class="pl-c1">0</span>; i &lt; D.<span class="pl-c1">size</span>(); i++)
+  {
+    std::cout &lt;&lt; <span class="pl-s"><span class="pl-pds">"</span>D[<span class="pl-pds">"</span></span> &lt;&lt; i &lt;&lt; <span class="pl-s"><span class="pl-pds">"</span>] = <span class="pl-pds">"</span></span> &lt;&lt; D[i] &lt;&lt; std::endl;
+  }
+
+  <span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre></div>
+<p>Here we've illustrated use of the <code>fill</code>, <code>copy</code>, and <code>sequence</code> functions. The <code>copy</code> function can be used to copy a range of host or device elements to another host or device vector. Like the corresponding C++ Standard Library function, <code>thrust::fill</code> simply sets a range of elements to a specific value. Thrust's <code>sequence</code> function can be used to create a sequence of equally spaced values.</p>
+<h3>
+<a id="user-content-thrust-namespace" class="anchor" href="#thrust-namespace" aria-hidden="true"><svg class="octicon octicon-link" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Thrust Namespace</h3>
+<p>You'll notice that we use things like <code>thrust::host_vector</code> or <code>thrust::copy</code> in our examples. The <code>thrust::</code> part tells the C++ compiler that we want to look inside the <code>thrust</code> namespace for a specific function or class. Namespaces are a nice way to avoid name collisions. For instance, <code>thrust::copy</code> is different from <code>std::copy</code> provided in the C++ Standard Library. C++ namespaces allow us to distinguish between these two <code>copy</code> functions.</p>
+<h3>
+<a id="user-content-iterators-and-static-dispatching" class="anchor" href="#iterators-and-static-dispatching" aria-hidden="true"><svg class="octicon octicon-link" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Iterators and Static Dispatching</h3>
+<p>In this section we used expressions like <code>H.begin()</code> and <code>H.end()</code> or offsets like <code>D.begin() + 7</code>. The result of <code>begin()</code> and <code>end()</code> is called an iterator in C++. In the case of vector containers, which are really just arrays, iterators can be thought of as pointers to array elements. Therefore, <code>H.begin()</code> is an iterator that points to the first element of the array stored inside the <code>H</code> vector. Similarly, <code>H.end()</code> points to the element one past the last element of the <code>H</code> vector.</p>
+<p>Although vector iterators are similar to pointers they carry more information with them. Notice that we did not have to tell <code>thrust::fill</code> that it was operating on a <code>device_vector</code> iterator. This information is captured in the type of the iterator returned by <code>D.begin()</code> which is different than the type returned by <code>H.begin()</code>. When a Thrust function is called, it inspects the type of the iterator to determine whether to use a host or a device implementation. This process is known as <em>static dispatching</em> since the host/device dispatch is resolved at compile time. Note that this implies that there is <strong>no runtime overhead</strong> to the dispatch process.</p>
+<p>You may wonder what happens when a "raw" pointer is used as an argument to a Thrust function. Like the STL, Thrust permits this usage and it will dispatch the host path of the algorithm. If the pointer in question is in fact a pointer to device memory then you'll need to wrap it with <code>thrust::device_ptr</code> before calling the function. For example:</p>
+<div class="highlight highlight-source-c++"><pre><span class="pl-c1">size_t</span> N = <span class="pl-c1">10</span>;
+
+<span class="pl-c"><span class="pl-c">//</span> raw pointer to device memory</span>
+<span class="pl-k">int</span> * raw_ptr;
+<span class="pl-en">cudaMalloc</span>((<span class="pl-k">void</span> **) &amp;raw_ptr, N * sizeof(<span class="pl-k">int</span>));
+
+<span class="pl-c"><span class="pl-c">//</span> wrap raw pointer with a device_ptr </span>
+thrust::device_ptr&lt;<span class="pl-k">int</span>&gt; <span class="pl-en">dev_ptr</span>(raw_ptr);
+
+<span class="pl-c"><span class="pl-c">//</span> use device_ptr in thrust algorithms</span>
+<span class="pl-en">thrust::fill</span>(dev_ptr, dev_ptr + N, (<span class="pl-k">int</span>) 0);</pre></div>
+<p>To extract a raw pointer from a <code>device_ptr</code>, <code>raw_pointer_cast</code> should be applied as follows:</p>
+<div class="highlight highlight-source-c++"><pre><span class="pl-c1">size_t</span> N = <span class="pl-c1">10</span>;
+
+<span class="pl-c"><span class="pl-c">//</span> create a device_ptr </span>
+thrust::device_ptr&lt;<span class="pl-k">int</span>&gt; dev_ptr = thrust::device_malloc&lt;<span class="pl-k">int</span>&gt;(N);
+     
+<span class="pl-c"><span class="pl-c">//</span> extract raw pointer from device_ptr</span>
+<span class="pl-k">int</span> * raw_ptr = thrust::raw_pointer_cast(dev_ptr);</pre></div>
+<p>Another reason to distinguish between iterators and pointers is that iterators can be used to traverse many kinds of data structures. For example, the C++ Standard Library provides a linked list container (<code>std::list</code>) that provides bidirectional (but not random access) iterators. Although Thrust does not provide device implementations of such containers, it is compatible with them.</p>
+<div class="highlight highlight-source-c++"><pre>#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>thrust/device_vector.h<span class="pl-pds">&gt;</span></span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>thrust/copy.h<span class="pl-pds">&gt;</span></span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>list<span class="pl-pds">&gt;</span></span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>vector<span class="pl-pds">&gt;</span></span>
+
+<span class="pl-k">int</span> <span class="pl-en">main</span>(<span class="pl-k">void</span>)
+{
+  <span class="pl-c"><span class="pl-c">//</span> create an STL list with 4 values</span>
+  std::list&lt;<span class="pl-k">int</span>&gt; stl_list;
+
+  stl_list.<span class="pl-c1">push_back</span>(<span class="pl-c1">10</span>);
+  stl_list.<span class="pl-c1">push_back</span>(<span class="pl-c1">20</span>);
+  stl_list.<span class="pl-c1">push_back</span>(<span class="pl-c1">30</span>);
+  stl_list.<span class="pl-c1">push_back</span>(<span class="pl-c1">40</span>);
+
+  <span class="pl-c"><span class="pl-c">//</span> initialize a device_vector with the list</span>
+  thrust::device_vector&lt;<span class="pl-k">int</span>&gt; <span class="pl-c1">D</span>(stl_list.<span class="pl-c1">begin</span>(), stl_list.<span class="pl-c1">end</span>());
+
+  <span class="pl-c"><span class="pl-c">//</span> copy a device_vector into an STL vector</span>
+  std::vector&lt;<span class="pl-k">int</span>&gt; <span class="pl-c1">stl_vector</span>(D.<span class="pl-c1">size</span>());
+  <span class="pl-c1">thrust::copy</span>(D.<span class="pl-c1">begin</span>(), D.<span class="pl-c1">end</span>(), stl_vector.<span class="pl-c1">begin</span>());
+
+  <span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre></div>
+<p><strong>For Future Reference:</strong> The iterators we've covered so far are useful, but fairly basic. In addition to these normal iterators, Thrust also provides a collection of fancy iterators with names like <code>counting_iterator</code> and <code>zip_iterator</code>. While they look and feel like normal iterators, fancy iterators are capable of more exciting things. We'll revisit this topic later in the tutorial.</p>
+<h2>
+<a id="user-content-algorithms" class="anchor" href="#algorithms" aria-hidden="true"><svg class="octicon octicon-link" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Algorithms</h2>
+<p>Thrust provides a large number of common parallel algorithms. Many of these algorithms have direct analogs in the C++ Standard Library, and when an equivalent standard library function exists, we choose the name (e.g. <code>thrust::sort</code> and <code>std::sort</code>).</p>
+<p>All algorithms in Thrust have implementations for both host and device. Specifically, when a Thrust algorithm is invoked with a host iterator, then the host path is dispatched. Similarly, a device implementation is called when a device iterator is used to define a range.</p>
+<p>With the exception of <code>thrust::copy</code>, which can copy data between host and device, all iterator arguments to a Thrust algorithm should live in the same place: either all on the host or all on the device. When this requirement is violated the compiler will produce an error message.</p>
+<h3>
+<a id="user-content-transformations" class="anchor" href="#transformations" aria-hidden="true"><svg class="octicon octicon-link" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Transformations</h3>
+<p>Transformations are algorithms that apply an operation to each element in a set of (zero or more) input ranges and then stores the result in a destination range. One example we have already seen is <code>thrust::fill</code>, which sets all elements of a range to a specified value. Other transformations include <code>thrust::sequence</code>, <code>thrust::replace</code>, and of course <code>thrust::transform</code>. Refer to the <a href="http://thrust.github.com/doc/group__transformations.html">documentation</a> for a complete listing.</p>
+<p>The following source code demonstrates several of the transformation algorithms. Note that <code>thrust::negate</code> and <code>thrust::modulus</code> are known as <em>functors</em> in C++ terminology. Thrust provides these and other common functors like <code>plus</code> and <code>multiplies</code> in the file <code>thrust/functional.h</code>.</p>
+<div class="highlight highlight-source-c++"><pre>#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>thrust/device_vector.h<span class="pl-pds">&gt;</span></span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>thrust/transform.h<span class="pl-pds">&gt;</span></span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>thrust/sequence.h<span class="pl-pds">&gt;</span></span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>thrust/copy.h<span class="pl-pds">&gt;</span></span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>thrust/fill.h<span class="pl-pds">&gt;</span></span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>thrust/replace.h<span class="pl-pds">&gt;</span></span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>thrust/functional.h<span class="pl-pds">&gt;</span></span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+
+<span class="pl-k">int</span> <span class="pl-en">main</span>(<span class="pl-k">void</span>)
+{
+  <span class="pl-c"><span class="pl-c">//</span> allocate three device_vectors with 10 elements</span>
+  thrust::device_vector&lt;<span class="pl-k">int</span>&gt; <span class="pl-c1">X</span>(<span class="pl-c1">10</span>);
+  thrust::device_vector&lt;<span class="pl-k">int</span>&gt; <span class="pl-c1">Y</span>(<span class="pl-c1">10</span>);
+  thrust::device_vector&lt;<span class="pl-k">int</span>&gt; <span class="pl-c1">Z</span>(<span class="pl-c1">10</span>);
+
+  <span class="pl-c"><span class="pl-c">//</span> initialize X to 0,1,2,3, ....</span>
+  <span class="pl-c1">thrust::sequence</span>(X.<span class="pl-c1">begin</span>(), X.<span class="pl-c1">end</span>());
+
+  <span class="pl-c"><span class="pl-c">//</span> compute Y = -X</span>
+  <span class="pl-c1">thrust::transform</span>(X.<span class="pl-c1">begin</span>(), X.<span class="pl-c1">end</span>(), Y.<span class="pl-c1">begin</span>(), thrust::negate&lt;<span class="pl-k">int</span>&gt;());
+
+  <span class="pl-c"><span class="pl-c">//</span> fill Z with twos</span>
+  <span class="pl-c1">thrust::fill</span>(Z.<span class="pl-c1">begin</span>(), Z.<span class="pl-c1">end</span>(), <span class="pl-c1">2</span>);
+
+  <span class="pl-c"><span class="pl-c">//</span> compute Y = X mod 2</span>
+  <span class="pl-c1">thrust::transform</span>(X.<span class="pl-c1">begin</span>(), X.<span class="pl-c1">end</span>(), Z.<span class="pl-c1">begin</span>(), Y.<span class="pl-c1">begin</span>(), thrust::modulus&lt;<span class="pl-k">int</span>&gt;());
+
+  <span class="pl-c"><span class="pl-c">//</span> replace all the ones in Y with tens</span>
+  <span class="pl-c1">thrust::replace</span>(Y.<span class="pl-c1">begin</span>(), Y.<span class="pl-c1">end</span>(), <span class="pl-c1">1</span>, <span class="pl-c1">10</span>);
+
+  <span class="pl-c"><span class="pl-c">//</span> print Y</span>
+  <span class="pl-c1">thrust::copy</span>(Y.<span class="pl-c1">begin</span>(), Y.<span class="pl-c1">end</span>(), std::ostream_iterator&lt;<span class="pl-k">int</span>&gt;(std::cout, <span class="pl-s"><span class="pl-pds">"</span><span class="pl-cce">\n</span><span class="pl-pds">"</span></span>));
+   
+  <span class="pl-k">return</span> <span class="pl-c1">0</span>;    
+}</pre></div>
+<p>While the functors in <code>thrust/functional.h</code> cover most of the built-in arithmetic and comparison operations, we often want to do something different. For example, consider the vector operation <code>y &lt;- a * x + y</code> where <code>x</code> and <code>y</code> are vectors and <code>a</code> is a scalar constant. This is the well-known SAXPY operation provided by any <a href="http://en.wikipedia.org/wiki/Basic_Linear_Algebra_Subprograms" rel="nofollow">BLAS</a> library.</p>
+<p>If we want to implement SAXPY with Thrust we have a few options. The first is to use two transformations (one addition and one multiplication) and a temporary vector filled with the value a. A better choice is to use a single transformation with a user-defined functor that does exactly what we want. We illustrate both approaches in the source code below.</p>
+<div class="highlight highlight-source-c++"><pre><span class="pl-k">struct</span> <span class="pl-en">saxpy_functor</span>
+{
+  <span class="pl-k">const</span> <span class="pl-k">float</span> a;
+
+  <span class="pl-en">saxpy_functor</span>(<span class="pl-k">float</span> _a) : a(_a) {}
+
+  __host__ __device__
+  <span class="pl-k">float</span> <span class="pl-en">operator</span>()(<span class="pl-k">const</span> <span class="pl-k">float</span>&amp; x, <span class="pl-k">const</span> <span class="pl-k">float</span>&amp; y) <span class="pl-k">const</span>
+  { 
+    <span class="pl-k">return</span> a * x + y;
+  }
+};
+
+<span class="pl-k">void</span> <span class="pl-en">saxpy_fast</span>(<span class="pl-k">float</span> A, thrust::device_vector&lt;<span class="pl-k">float</span>&gt;&amp; X, thrust::device_vector&lt;<span class="pl-k">float</span>&gt;&amp; Y)
+{
+  <span class="pl-c"><span class="pl-c">//</span> Y &lt;- A * X + Y</span>
+  <span class="pl-c1">thrust::transform</span>(X.<span class="pl-c1">begin</span>(), X.<span class="pl-c1">end</span>(), Y.<span class="pl-c1">begin</span>(), Y.<span class="pl-c1">begin</span>(), <span class="pl-c1">saxpy_functor</span>(A));
+}
+
+<span class="pl-k">void</span> <span class="pl-en">saxpy_slow</span>(<span class="pl-k">float</span> A, thrust::device_vector&lt;<span class="pl-k">float</span>&gt;&amp; X, thrust::device_vector&lt;<span class="pl-k">float</span>&gt;&amp; Y)
+{
+  thrust::device_vector&lt;<span class="pl-k">float</span>&gt; <span class="pl-c1">temp</span>(X.<span class="pl-c1">size</span>());
+   
+  <span class="pl-c"><span class="pl-c">//</span> temp &lt;- A</span>
+  <span class="pl-c1">thrust::fill</span>(temp.<span class="pl-c1">begin</span>(), temp.<span class="pl-c1">end</span>(), A);
+    
+  <span class="pl-c"><span class="pl-c">//</span> temp &lt;- A * X</span>
+  <span class="pl-c1">thrust::transform</span>(X.<span class="pl-c1">begin</span>(), X.<span class="pl-c1">end</span>(), temp.<span class="pl-c1">begin</span>(), temp.<span class="pl-c1">begin</span>(), thrust::multiplies&lt;<span class="pl-k">float</span>&gt;());
+
+  <span class="pl-c"><span class="pl-c">//</span> Y &lt;- A * X + Y</span>
+  <span class="pl-c1">thrust::transform</span>(temp.<span class="pl-c1">begin</span>(), temp.<span class="pl-c1">end</span>(), Y.<span class="pl-c1">begin</span>(), Y.<span class="pl-c1">begin</span>(), thrust::plus&lt;<span class="pl-k">float</span>&gt;());
+}</pre></div>
+<p>Both <code>saxpy_fast</code> and <code>saxpy_slow</code> are valid SAXPY implementations, however <code>saxpy_fast</code> will be significantly faster than <code>saxpy_slow</code>. Ignoring the cost of allocating the temp vector and the arithmetic operations we have the following costs:</p>
+<ul>
+<li>
+<code>fast_saxpy</code>: performs 2N reads and N writes</li>
+<li>
+<code>slow_saxpy</code>: performs 4N reads and 3N writes</li>
+</ul>
+<p>Since SAXPY is <em>memory bound</em> (its performance is limited by memory bandwidth, not floating point performance) the larger number of reads and writes makes <code>saxpy_slow</code> much more expensive. In contrast, <code>saxpy_fast</code> will perform about as fast as SAXPY in an optimized BLAS implementation. In memory bound algorithms like SAXPY it is generally worthwhile to apply kernel fusion (combining multiple operations into a single kernel) to minimize the number of memory transactions.</p>
+<p><code>thrust::transform</code> only supports transformations with one or two input arguments (e.g. <code>f(x) -&gt; y</code> and <code>f(x,y) -&gt; z</code>). When a transformation uses more than two input arguments it is necessary to use a different approach. The <a href="https://github.com/thrust/thrust/blob/master/examples/arbitrary_transformation.cu"><code>arbitrary_transformation</code></a> example demonstrates a solution that uses <code>thrust::zip_iterator</code> and <code>thrust::for_each</code>.</p>
+<h3>
+<a id="user-content-reductions" class="anchor" href="#reductions" aria-hidden="true"><svg class="octicon octicon-link" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reductions</h3>
+<p>A reduction algorithm uses a binary operation to reduce an input sequence to a single value. For example, the sum of an array of numbers is obtained by reducing the array with a plus operation. Similarly, the maximum of an array is obtained by reducing with an operator that takes two inputs and returns the maximum. The sum of an array is implemented with <code>thrust::reduce</code> as follows:</p>
+<pre><code>int sum = thrust::reduce(D.begin(), D.end(), (int) 0, thrust::plus&lt;int&gt;());
+</code></pre>
+<p>The first two arguments to <code>reduce</code> define the range of values while the third and fourth parameters provide the initial value and reduction operator respectively. Actually, this kind of reduction is so common that it is the default choice when no initial value or operator is provided. The following three lines are therefore equivalent:</p>
+<pre><code>int sum = thrust::reduce(D.begin(), D.end(), (int) 0, thrust::plus&lt;int&gt;());
+int sum = thrust::reduce(D.begin(), D.end(), (int) 0);
+int sum = thrust::reduce(D.begin(), D.end());
+</code></pre>
+<p>Although <code>thrust::reduce</code> is sufficient to implement a wide variety of reductions, Thrust provides a few additional functions for convenience (like the C++ Standard Library). For example, <code>thrust::count</code> returns the number of instances of a specific value in a given sequence:</p>
+<pre><code>#include &lt;thrust/count.h&gt;
+#include &lt;thrust/device_vector.h&gt;
+...
+// put three 1s in a device_vector
+thrust::device_vector&lt;int&gt; vec(5,0);
+vec[1] = 1;
+vec[3] = 1;
+vec[4] = 1;
+
+// count the 1s
+int result = thrust::count(vec.begin(), vec.end(), 1);
+// result is three
+</code></pre>
+<p>Other reduction operations include <code>thrust::count_if</code>, <code>thrust::min_element</code>, <code>thrust::max_element</code>, <code>thrust::is_sorted</code>, <code>thrust::inner_product</code>, and several others. Refer to the <a href="http://thrust.github.com/doc/group__reductions.html">documentation</a> for a complete listing.</p>
+<p>The SAXPY example in the Transformations section showed how kernel fusion can be used to reduce the number of memory transfers used by a transformation kernel. With <code>thrust::transform_reduce</code> we can also apply kernel fusion to reduction kernels. Consider the following example which computes the norm of a vector.</p>
+<pre><code>#include &lt;thrust/transform_reduce.h&gt;
+#include &lt;thrust/functional.h&gt;
+#include &lt;thrust/device_vector.h&gt;
+#include &lt;thrust/host_vector.h&gt;
+#include &lt;cmath&gt;
+
+// square&lt;T&gt; computes the square of a number f(x) -&gt; x*x
+template &lt;typename T&gt;
+struct square
+{
+  __host__ __device__
+  T operator()(const T&amp; x) const
+  { 
+    return x * x;
+  }
+};
+
+int main(void)
+{
+  // initialize host array
+  float x[4] = {1.0, 2.0, 3.0, 4.0};
+
+  // transfer to device
+  thrust::device_vector&lt;float&gt; d_x(x, x + 4);
+
+  // setup arguments
+  square&lt;float&gt;        unary_op;
+  thrust::plus&lt;float&gt; binary_op;
+  float init = 0;
+
+  // compute norm
+  float norm = std::sqrt( thrust::transform_reduce(d_x.begin(), d_x.end(), unary_op, init, binary_op) );
+
+  std::cout &lt;&lt; norm &lt;&lt; std::endl;
+
+  return 0;
+}
+</code></pre>
+<p>Here we have a <em>unary operator</em> called <code>square</code> that squares each element of the input sequence. The sum of squares is then computed using a standard <code>plus</code> reduction. Like the slower version of the SAXPY transformation, we could implement <code>norm</code> with multiple passes: first a <code>transform</code> using <code>square</code> or perhaps just <code>multiplies</code> and then a <code>plus</code> reduction over a temporary array. However this would be unnecessarily wasteful and considerably slower. By fusing the <code>square</code> operation with the reduction kernel we again have a highly optimized implementation which offers the same performance as hand-written kernels.</p>
+<h3>
+<a id="user-content-prefix-sums" class="anchor" href="#prefix-sums" aria-hidden="true"><svg class="octicon octicon-link" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Prefix-Sums</h3>
+<p>Parallel prefix-sums, or <em>scan</em> operations, are important building blocks in many parallel algorithms such as stream compaction and radix sort. Consider the following source code which illustrates an <em>inclusive scan</em> operation using the default <em>plus</em> operator:</p>
+<pre><code>#include &lt;thrust/scan.h&gt;
+
+int data[6] = {1, 0, 2, 2, 1, 3};
+
+thrust::inclusive_scan(data, data + 6, data); // in-place scan
+
+// data is now {1, 1, 3, 5, 6, 9}
+</code></pre>
+<p>In an inclusive scan each element of the output is the corresponding <a href="http://en.wikipedia.org/wiki/Partial_sum#Basic_properties" rel="nofollow">partial sum</a> of the input range. For example, <code>data[2] = data[0] + data[1] + data[2]</code>. An <em>exclusive scan</em> is similar, but shifted by one place to the right:</p>
+<pre><code>#include &lt;thrust/scan.h&gt;
+
+int data[6] = {1, 0, 2, 2, 1, 3};
+
+thrust::exclusive_scan(data, data + 6, data); // in-place scan
+
+// data is now {0, 1, 1, 3, 5, 6}
+</code></pre>
+<p>So now <code>data[2] = data[0] + data[1]</code>. As these examples show, <code>inclusive_scan</code> and <code>exclusive_scan</code> are permitted to be performed in-place. Thrust also provides the functions <code>transform_inclusive_scan</code> and <code>transform_exclusive_scan</code> which apply a unary function to the input sequence before performing the scan. Refer to the <a href="http://thrust.github.com/doc/group__prefixsums.html">documentation</a> for a complete list of scan variants.</p>
+<h3>
+<a id="user-content-reordering" class="anchor" href="#reordering" aria-hidden="true"><svg class="octicon octicon-link" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reordering</h3>
+<p>Thrust provides support for <strong>partitioning</strong> and <strong>stream compaction</strong> through the following algorithms:</p>
+<ul>
+<li>
+<code>copy_if</code> : copy elements that pass a predicate test</li>
+<li>
+<code>partition</code> : reorder elements according to a predicate (<code>true</code> values precede <code>false</code> values)</li>
+<li>
+<code>remove</code> and <code>remove_if</code> : remove elements that fail a predicate test</li>
+<li>
+<code>unique</code>: remove consecutive duplicates within a range</li>
+</ul>
+<p>Refer to the <a href="http://thrust.github.com/doc/group__reordering.html">documentation</a> for a complete list of reordering functions and examples of their usage.</p>
+<h3>
+<a id="user-content-sorting" class="anchor" href="#sorting" aria-hidden="true"><svg class="octicon octicon-link" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sorting</h3>
+<p>Thrust offers several functions to sort data or rearrange data according to a given criterion. The <code>thrust::sort</code> and <code>thrust::stable_sort</code> functions are direct analogs of <code>sort</code> and <code>stable_sort</code> in the C++ Standard Library.</p>
+<pre><code>#include &lt;thrust/sort.h&gt;
+...
+const int N = 6;
+int A[N] = {1, 4, 2, 8, 5, 7};
+thrust::sort(A, A + N);
+// A is now {1, 2, 4, 5, 7, 8}
+</code></pre>
+<p>In addition, Thrust provides <code>thrust::sort_by_key</code> and <code>thrust::stable_sort_by_key</code>, which sort key-value pairs stored in separate places.</p>
+<pre><code>#include &lt;thrust/sort.h&gt;
+...
+const int N = 6;
+int    keys[N] = {  1,   4,   2,   8,   5,   7};
+char values[N] = {'a', 'b', 'c', 'd', 'e', 'f'};
+thrust::sort_by_key(keys, keys + N, values);
+// keys is now   {  1,   2,   4,   5,   7,   8}
+// values is now {'a', 'c', 'b', 'e', 'f', 'd'}
+</code></pre>
+<p>Like their standard library brethren, the sorting functions also accept user-defined comparison operators:</p>
+<pre><code>#include &lt;thrust/sort.h&gt;
+#include &lt;thrust/functional.h&gt;
+...
+const int N = 6;
+int A[N] = {1, 4, 2, 8, 5, 7};
+thrust::stable_sort(A, A + N, thrust::greater&lt;int&gt;());
+// A is now {8, 7, 5, 4, 2, 1}
+</code></pre>
+<h2>
+<a id="user-content-fancy-iterators" class="anchor" href="#fancy-iterators" aria-hidden="true"><svg class="octicon octicon-link" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Fancy Iterators</h2>
+<p>Fancy iterators perform a variety of valuable purposes. In this section we'll show how fancy iterators allow us to attack a broader class of problems with the standard Thrust algorithms. For those familiar with the <a href="http://www.boost.org/" rel="nofollow">Boost C++ Library</a>, note that our fancy iterators were inspired by (and generally derived from) those in the <a href="http://www.boost.org/doc/libs/1_40_0/libs/iterator/doc/index.html" rel="nofollow">Boost Iterator Library</a>.</p>
+<h3>
+<a id="user-content-constant_iterator" class="anchor" href="#constant_iterator" aria-hidden="true"><svg class="octicon octicon-link" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>constant_iterator</code>
+</h3>
+<p>Arguably the simplest of the bunch, <code>constant_iterator</code> is simply an iterator that returns the same value whenever we dereference it. In the following example we initialize a <code>constant_iterator</code> with the value <code>10</code>.</p>
+<pre><code>#include &lt;thrust/iterator/constant_iterator.h&gt;
+...
+// create iterators
+thrust::constant_iterator&lt;int&gt; first(10);
+thrust::constant_iterator&lt;int&gt; last = first + 3;
+
+first[0]   // returns 10
+first[1]   // returns 10
+first[100] // returns 10
+
+// sum of [first, last)
+thrust::reduce(first, last);   // returns 30 (i.e. 3 * 10)
+</code></pre>
+<p>Whenever an input sequence of constant values is needed, <code>constant_iterator</code> is a convenient and efficient solution.</p>
+<h3>
+<a id="user-content-transform_iterator" class="anchor" href="#transform_iterator" aria-hidden="true"><svg class="octicon octicon-link" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>transform_iterator</code>
+</h3>
+<p>In the Algorithms section we spoke about kernel fusion, i.e. combining separate algorithms like <code>transform</code> and reduce into a single <code>transform_reduce</code> operation. The <code>transform_iterator</code> allows us to apply the same technique, even when we don't have a special <code>transform_xxx</code> version of the algorithm. This example shows another way to fuse a transformation with a reduction, this time with just plain reduce applied to a <code>transform_iterator</code>.</p>
+<pre><code>#include &lt;thrust/iterator/transform_iterator.h&gt;
+// initialize vector
+thrust::device_vector&lt;int&gt; vec(3);
+vec[0] = 10; vec[1] = 20; vec[2] = 30;
+
+// create iterator (type omitted)
+... first = thrust::make_transform_iterator(vec.begin(), negate&lt;int&gt;());
+... last  = thrust::make_transform_iterator(vec.end(),   negate&lt;int&gt;());
+
+first[0]   // returns -10
+first[1]   // returns -20
+first[2]   // returns -30
+
+// sum of [first, last)
+thrust::reduce(first, last);   // returns -60 (i.e. -10 + -20 + -30)
+</code></pre>
+<p>Note, we have omitted the types for iterators first and last for simplicity. One downside of <code>transform_iterator</code> is that it can be cumbersome to specify the full type of the iterator, which can be quite lengthy. For this reason, it is common practice to simply put the call to <code>make_transform_iterator</code> in the arguments of the algorithm being invoked. For example,</p>
+<pre><code>// sum of [first, last)
+thrust::reduce(thrust::make_transform_iterator(vec.begin(), negate&lt;int&gt;()),
+               thrust::make_transform_iterator(vec.end(),   negate&lt;int&gt;()));
+</code></pre>
+<p>allows us to avoid creating a variable to store <code>first</code> and <code>last</code>.</p>
+<h3>
+<a id="user-content-permutation_iterator" class="anchor" href="#permutation_iterator" aria-hidden="true"><svg class="octicon octicon-link" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>permutation_iterator</code>
+</h3>
+<p>In the previous section we showed how <code>transform_iterator</code> is used to fuse transformations with another algorithm to avoid unnecessary memory operations. The <code>permutation_iterator</code> is similar: it allows us to fuse gather and scatter operations with Thrust algorithms, or even other fancy iterators. The following example shows how to fuse a gather operation with a reduction.</p>
+<pre><code>#include &lt;thrust/iterator/permutation_iterator.h&gt;
+...
+// gather locations
+thrust::device_vector&lt;int&gt; map(4);
+map[0] = 3;
+map[1] = 1;
+map[2] = 0;
+map[3] = 5;
+
+// array to gather from
+thrust::device_vector&lt;int&gt; source(6);
+source[0] = 10;
+source[1] = 20;
+source[2] = 30;
+source[3] = 40;
+source[4] = 50;
+source[5] = 60;
+
+// fuse gather with reduction: 
+//   sum = source[map[0]] + source[map[1]] + ...
+int sum = thrust::reduce(thrust::make_permutation_iterator(source.begin(), map.begin()),
+                         thrust::make_permutation_iterator(source.begin(), map.end()));
+</code></pre>
+<p>Here we have used the <code>make_permutation_iterator</code> function to simplify the construction of the <code>permutation_iterators</code>. The first argument to <code>make_permutation_iterator</code> is the source array of the gather operation and the second is the list of map indices. Note that we pass in <code>source.begin()</code> for the first argument in both cases, but vary the second argument to define the beginning and end of the sequence.</p>
+<p>When a <code>permutation_iterator</code> is used as an output sequence of a function it is equivalent to fusing a scatter operation to the algorithm. In general <code>permutation_iterator</code> allows you to operate on a specific set of values in a sequence instead of the entire sequence.</p>
+<h3>
+<a id="user-content-zip_iterator" class="anchor" href="#zip_iterator" aria-hidden="true"><svg class="octicon octicon-link" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>zip_iterator</code>
+</h3>
+<p>Keep reading, we've saved the best iterator for last! The <code>zip_iterator</code> is an <strong>extremely</strong> useful gadget: it takes multiple input sequences and yields a sequence of tuples. In this example we "zip" together a sequence of <code>int</code> and a sequence of <code>char</code> into a sequence of <code>tuple&lt;int,char&gt;</code> and compute the <code>tuple</code> with the maximum value.</p>
+<pre><code>#include &lt;thrust/iterator/zip_iterator.h&gt;
+...
+// initialize vectors
+thrust::device_vector&lt;int&gt;  A(3);
+thrust::device_vector&lt;char&gt; B(3);
+A[0] = 10;  A[1] = 20;  A[2] = 30;
+B[0] = 'x'; B[1] = 'y'; B[2] = 'z';
+
+// create iterator (type omitted)
+first = thrust::make_zip_iterator(thrust::make_tuple(A.begin(), B.begin()));
+last  = thrust::make_zip_iterator(thrust::make_tuple(A.end(),   B.end()));
+
+first[0]   // returns tuple(10, 'x')
+first[1]   // returns tuple(20, 'y')
+first[2]   // returns tuple(30, 'z')
+
+// maximum of [first, last)
+thrust::maximum&lt; tuple&lt;int,char&gt; &gt; binary_op;
+thrust::tuple&lt;int,char&gt; init = first[0];
+thrust::reduce(first, last, init, binary_op); // returns tuple(30, 'z')
+</code></pre>
+<p>What makes <code>zip_iterator</code> so useful is that most algorithms accept either one, or occasionally two, input sequences. The <code>zip_iterator</code> allows us to combine many independent sequences into a single sequence of tuples, which can be processed by a broad set of algorithms.</p>
+<p>Refer to the <a href="https://github.com/thrust/thrust/blob/master/examples/arbitrary_transformation.cu"><code>arbitrary_transformation</code></a> example to see how to implement a ternary transformation with <code>zip_iterator</code> and <code>for_each</code>. A simple extension of this example would allow you to compute transformations with multiple <strong>output</strong> sequences as well.</p>
+<p>In addition to convenience, <code>zip_iterator</code> allows us to implement programs more efficiently. For example, storing 3d points as an array of <code>float3</code> in CUDA is generally a bad idea, since array accesses are not properly coalesced. With <code>zip_iterator</code> we can store the three coordinates in three separate arrays, which does permit coalesced memory access. In this case, we use <code>zip_iterator</code> to create a <strong>virtual</strong> array of 3d vectors which we can feed in to Thrust algorithms. Refer to the <a href="https://github.com/thrust/thrust/blob/master/examples/dot_products_with_zip.cu"><code>dot_products_with_zip</code></a> example for additional details.</p>
+<h3>
+<a id="user-content-additional-details" class="anchor" href="#additional-details" aria-hidden="true"><svg class="octicon octicon-link" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Additional Details</h3>
+<p>This guide only scratches the surface of what you can do with Thrust. The following resources can help you learn to do more with Thrust or provide assistance when problems arise.</p>
+<ul>
+<li>Comprehensive <a href="https://github.com/thrust/thrust/wiki/Documentation">Documentation</a> of Thrust's API</li>
+<li>A list of <a href="https://github.com/thrust/thrust/wiki/Frequently-Asked-Questions">Frequently Asked Questions</a>
+</li>
+<li>Collection of <a href="https://github.com/thrust/thrust/tree/master/examples">example</a> programs</li>
+</ul>
+<p>We strongly encourage users to subscribe to the <a href="http://groups.google.com/group/thrust-users" rel="nofollow">thrust-users</a> mailing list. The mailing list is a great place to seek out help from the Thrust developers and other Thrust users.</p>
+
+        </div>
+
+    </div>
+
+    <div id="wiki-rightbar" class="mt-4 ml-md-6 flex-shrink-0 width-full wiki-rightbar">
+      <div id="wiki-pages-box" class="mb-4 wiki-pages-box js-wiki-pages-box" role="navigation">
+        
+<div class="Box Box--condensed box-shadow">
+  <div class="Box-header js-wiki-toggle-collapse" style="cursor: pointer">
+    <h3 class="Box-title">
+      <svg class="octicon octicon-triangle-down js-wiki-sidebar-toggle-display" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M0 5l6 6 6-6H0z"/></svg>
+      <svg class="octicon octicon-triangle-right js-wiki-sidebar-toggle-display d-none" viewBox="0 0 6 16" version="1.1" width="6" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M0 14l6-6-6-6v12z"/></svg>
+      Pages <span class="Counter Counter--gray">14</span>
+    </h3>
+  </div>
+  <div class=" js-wiki-sidebar-toggle-display">
+    <div class="filter-bar">
+      <input type="text" id="wiki-pages-filter" class="form-control input-sm input-block js-filterable-field" placeholder="Find a Page…" aria-label="Find a Page…">
+    </div>
+
+    <ul class="m-0 p-0 list-style-none" data-filterable-for="wiki-pages-filter" data-filterable-type="substring">
+        <li class="Box-row">
+          <strong><a class="d-block" href="/thrust/thrust/wiki">Home</a></strong>
+        </li>
+        <li class="Box-row">
+          <strong><a class="d-block" href="/thrust/thrust/wiki/Debugging">Debugging</a></strong>
+        </li>
+        <li class="Box-row">
+          <strong><a class="d-block" href="/thrust/thrust/wiki/Derived-Systems">Derived Systems</a></strong>
+        </li>
+        <li class="Box-row">
+          <strong><a class="d-block" href="/thrust/thrust/wiki/Developer-Information">Developer Information</a></strong>
+        </li>
+        <li class="Box-row">
+          <strong><a class="d-block" href="/thrust/thrust/wiki/Device-Backends">Device Backends</a></strong>
+        </li>
+        <li class="Box-row">
+          <strong><a class="d-block" href="/thrust/thrust/wiki/Direct-System-Access">Direct System Access</a></strong>
+        </li>
+        <li class="Box-row">
+          <strong><a class="d-block" href="/thrust/thrust/wiki/Dispatch-Targets">Dispatch Targets</a></strong>
+        </li>
+        <li class="Box-row">
+          <strong><a class="d-block" href="/thrust/thrust/wiki/Documentation">Documentation</a></strong>
+        </li>
+        <li class="Box-row">
+          <strong><a class="d-block" href="/thrust/thrust/wiki/Frequently-Asked-Questions">Frequently Asked Questions</a></strong>
+        </li>
+        <li class="Box-row">
+          <strong><a class="d-block" href="/thrust/thrust/wiki/Host-Backends">Host Backends</a></strong>
+        </li>
+        <li class="Box-row">
+          <strong><a class="d-block" href="/thrust/thrust/wiki/Quick-Start-Guide">Quick Start Guide</a></strong>
+        </li>
+        <li class="Box-row">
+          <strong><a class="d-block" href="/thrust/thrust/wiki/Roadmap">Roadmap</a></strong>
+        </li>
+        <li class="Box-row">
+          <strong><a class="d-block" href="/thrust/thrust/wiki/Standalone-Systems">Standalone Systems</a></strong>
+        </li>
+        <li class="Box-row">
+          <strong><a class="d-block" href="/thrust/thrust/wiki/Users">Users</a></strong>
+        </li>
+    </ul>
+  </div>
+</div>
+
+      </div>
+
+
+      <h5 class="mt-0 mb-2">Clone this wiki locally</h5>
+      <div class="width-full input-group">
+        <input
+            id="wiki-clone-url"
+            type="text"
+            data-autoselect
+            class="form-control input-sm text-small text-gray input-monospace"
+            aria-label="Clone URL for this wiki"
+            value="https://github.com/thrust/thrust.wiki.git"
+            readonly="readonly">
+        <span class="input-group-button">
+          <clipboard-copy for="wiki-clone-url" aria-label="Copy to clipboard" class="btn btn-sm zeroclipboard-button">
+            <svg class="octicon octicon-clippy" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M2 13h4v1H2v-1zm5-6H2v1h5V7zm2 3V8l-3 3 3 3v-2h5v-2H9zM4.5 9H2v1h2.5V9zM2 12h2.5v-1H2v1zm9 1h1v2c-.02.28-.11.52-.3.7-.19.18-.42.28-.7.3H1c-.55 0-1-.45-1-1V4c0-.55.45-1 1-1h3c0-1.11.89-2 2-2 1.11 0 2 .89 2 2h3c.55 0 1 .45 1 1v5h-1V6H1v9h10v-2zM2 5h8c0-.55-.45-1-1-1H8c-.55 0-1-.45-1-1s-.45-1-1-1-1 .45-1 1-.45 1-1 1H3c-.55 0-1 .45-1 1z"/></svg>
+          </clipboard-copy>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  </div>
+  <div class="modal-backdrop js-touch-events"></div>
+</div>
+
+
+    </div>
+  </div>
+
+  </div>
+
+        
+<div class="footer container-lg p-responsive" role="contentinfo">
+  <div class="position-relative d-flex flex-row-reverse flex-lg-row flex-wrap flex-lg-nowrap flex-justify-center flex-lg-justify-between pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light ">
+    <ul class="list-style-none d-flex flex-wrap col-12 col-lg-6 flex-justify-center flex-lg-justify-start mb-2 mb-lg-0">
+      <li class="mr-3">&copy; 2018 <span title="0.18360s from unicorn-5744996ff8-kx45l">GitHub</span>, Inc.</li>
+        <li class="mr-3"><a data-ga-click="Footer, go to terms, text:terms" href="https://github.com/site/terms">Terms</a></li>
+        <li class="mr-3"><a data-ga-click="Footer, go to privacy, text:privacy" href="https://github.com/site/privacy">Privacy</a></li>
+        <li class="mr-3"><a href="/security" data-ga-click="Footer, go to security, text:security">Security</a></li>
+        <li class="mr-3"><a href="https://status.github.com/" data-ga-click="Footer, go to status, text:status">Status</a></li>
+        <li><a data-ga-click="Footer, go to help, text:help" href="https://help.github.com">Help</a></li>
+    </ul>
+
+    <a aria-label="Homepage" title="GitHub" class="footer-octicon mr-lg-4" href="https://github.com">
+      <svg height="24" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="24" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+</a>
+   <ul class="list-style-none d-flex flex-wrap col-12 col-lg-6 flex-justify-center flex-lg-justify-end mb-2 mb-lg-0">
+        <li class="mr-3"><a data-ga-click="Footer, go to contact, text:contact" href="https://github.com/contact">Contact GitHub</a></li>
+        <li class="mr-3"><a href="https://github.com/pricing" data-ga-click="Footer, go to Pricing, text:Pricing">Pricing</a></li>
+      <li class="mr-3"><a href="https://developer.github.com" data-ga-click="Footer, go to api, text:api">API</a></li>
+      <li class="mr-3"><a href="https://training.github.com" data-ga-click="Footer, go to training, text:training">Training</a></li>
+        <li class="mr-3"><a href="https://blog.github.com" data-ga-click="Footer, go to blog, text:blog">Blog</a></li>
+        <li><a data-ga-click="Footer, go to about, text:about" href="https://github.com/about">About</a></li>
+
+    </ul>
+  </div>
+  <div class="d-flex flex-justify-center pb-6">
+    <span class="f6 text-gray-light"></span>
+  </div>
+</div>
+
+
+
+  <div id="ajax-error-message" class="ajax-error-message flash flash-error">
+    <svg class="octicon octicon-alert" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"/></svg>
+    <button type="button" class="flash-close js-ajax-error-dismiss" aria-label="Dismiss error">
+      <svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"/></svg>
+    </button>
+    You can’t perform that action at this time.
+  </div>
+
+
+    <script crossorigin="anonymous" integrity="sha512-WnyO4VoIUwWWQOmFLjYf4UGg/c1z9VlaLN8IMuiI3uMhhl6rejyThRdLPDyePeUPW6N+38OoBMs6AkqcvWALtA==" type="application/javascript" src="https://assets-cdn.github.com/assets/compat-b66b5d97b4442a01f057c74b091c4368.js"></script>
+    <script crossorigin="anonymous" integrity="sha512-Ax8so2RYXS5IplklIjBUPCs/H8jumancM4AKLTR35EuK3eUxGRyo1EkTBkTQnSUzk5ZQ9pYsHYLJ1ImS2Fcerg==" type="application/javascript" src="https://assets-cdn.github.com/assets/frameworks-755e0c008571c9f249a478f4cda76ecf.js"></script>
+    
+    <script crossorigin="anonymous" async="async" integrity="sha512-Sj2Mi4s+JFRnELcUX0MvfW4vZFDOvB931nSlmoeHBGtu49O4WiRw8iSXJwAxEhxROt1LHSfnduEfn7VX4D8IGA==" type="application/javascript" src="https://assets-cdn.github.com/assets/github-f4a5e5c438a2ec5567802ead3931f7db.js"></script>
+    
+      <script crossorigin="anonymous" integrity="sha512-Sbh6IBBheIyLGxM01XCHt9e+gxJYNopkvwAfMqPt58UaiGYfQPfaWe3kYAoCbJtbrXUTfLg2cWmZ1XuedFjZ1A==" type="application/javascript" src="https://assets-cdn.github.com/assets/wiki-afeeb054a0010fbe05e1039a2049ea2c.js"></script>
+
+    
+  <div class="js-stale-session-flash stale-session-flash flash flash-warn flash-banner d-none">
+    <svg class="octicon octicon-alert" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"/></svg>
+    <span class="signed-in-tab-flash">You signed in with another tab or window. <a href="">Reload</a> to refresh your session.</span>
+    <span class="signed-out-tab-flash">You signed out in another tab or window. <a href="">Reload</a> to refresh your session.</span>
+  </div>
+  <div class="facebox" id="facebox" style="display:none;">
+  <div class="facebox-popup">
+    <div class="facebox-content" role="dialog" aria-labelledby="facebox-header" aria-describedby="facebox-description">
+    </div>
+    <button type="button" class="facebox-close js-facebox-close" aria-label="Close modal">
+      <svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"/></svg>
+    </button>
+  </div>
+</div>
+
+  <template id="site-details-dialog">
+  <details class="details-reset details-overlay details-overlay-dark lh-default text-gray-dark" open>
+    <summary aria-haspopup="dialog" aria-label="Close dialog"></summary>
+    <details-dialog class="Box Box--overlay d-flex flex-column anim-fade-in fast">
+      <button class="Box-btn-octicon m-0 btn-octicon position-absolute right-0 top-0" type="button" aria-label="Close dialog" data-close-dialog>
+        <svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"/></svg>
+      </button>
+      <div class="octocat-spinner my-6 js-details-dialog-spinner"></div>
+    </details-dialog>
+  </details>
+</template>
+
+  <div class="Popover js-hovercard-content position-absolute" style="display: none; outline: none;" tabindex="0">
+  <div class="Popover-message Popover-message--bottom-left Popover-message--large Box box-shadow-large" style="width:360px;">
+  </div>
+</div>
+
+<div id="hovercard-aria-description" class="sr-only">
+  Press h to open a hovercard with more details.
+</div>
+
+
+  </body>
+</html>
+
