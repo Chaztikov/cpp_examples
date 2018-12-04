@@ -1,5 +1,6 @@
 #include <iostream>
 #include <exception>
+#include <excecution>
 using namespace std;
 
 struct ZeroError{
