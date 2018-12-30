@@ -1,0 +1,129 @@
+Simple Arithmetic Operator Template Classes
+Key
+T: primary operand type	U: alternate operand type
+t, t1: values of type T	u: value of type U
+Template	Supplied Operations	Requirements
+less_than_comparable<T>
+less_than_comparable1<T>	bool operator>(const T&, const T&)
+bool operator<=(const T&, const T&)
+bool operator>=(const T&, const T&)	t < t1.
+Return convertible to bool. See the Ordering Note.
+less_than_comparable<T, U>
+less_than_comparable2<T, U>	bool operator<=(const T&, const U&)
+bool operator>=(const T&, const U&)
+bool operator>(const U&, const T&)
+bool operator<(const U&, const T&)
+bool operator<=(const U&, const T&)
+bool operator>=(const U&, const T&)	t < u. t > u.
+Returns convertible to bool. See the Ordering Note.
+equality_comparable<T>
+equality_comparable1<T>	bool operator!=(const T&, const T&)	t == t1.
+Return convertible to bool.
+equality_comparable<T, U>
+equality_comparable2<T, U>	bool operator==(const U&, const T&)
+bool operator!=(const U&, const T&)
+bool operator!=(const T&, const U&)	t == u.
+Return convertible to bool.
+addable<T>
+addable1<T>	T operator+(const T&, const T&)	T temp(t); temp += t1.
+Return convertible to T. See the Symmetry Note.
+addable<T, U>
+addable2<T, U>	T operator+(const T&, const U&)
+T operator+(const U&, const T& )	T temp(t); temp += u.
+Return convertible to T. See the Symmetry Note.
+subtractable<T>
+subtractable1<T>	T operator-(const T&, const T&)	T temp(t); temp -= t1.
+Return convertible to T. See the Symmetry Note.
+subtractable<T, U>
+subtractable2<T, U>	T operator-(const T&, const U&)	T temp(t); temp -= u.
+Return convertible to T. See the Symmetry Note.
+subtractable2_left<T, U>	T operator-(const U&, const T&)	T temp(u); temp -= t.
+Return convertible to T.
+multipliable<T>
+multipliable1<T>	T operator*(const T&, const T&)	T temp(t); temp *= t1.
+Return convertible to T. See the Symmetry Note.
+multipliable<T, U>
+multipliable2<T, U>	T operator*(const T&, const U&)
+T operator*(const U&, const T&)	T temp(t); temp *= u.
+Return convertible to T. See the Symmetry Note.
+dividable<T>
+dividable1<T>	T operator/(const T&, const T&)	T temp(t); temp /= t1.
+Return convertible to T. See the Symmetry Note.
+dividable<T, U>
+dividable2<T, U>	T operator/(const T&, const U&)	T temp(t); temp /= u.
+Return convertible to T. See the Symmetry Note.
+dividable2_left<T, U>	T operator/(const U&, const T&)	T temp(u); temp /= t.
+Return convertible to T.
+modable<T>
+modable1<T>	T operator%(const T&, const T&)	T temp(t); temp %= t1.
+Return convertible to T. See the Symmetry Note.
+modable<T, U>
+modable2<T, U>	T operator%(const T&, const U&)	T temp(t); temp %= u.
+Return convertible to T. See the Symmetry Note.
+modable2_left<T, U>	T operator%(const U&, const T&)	T temp(u); temp %= t.
+Return convertible to T.
+orable<T>
+orable1<T>	T operator|(const T&, const T&)	T temp(t); temp |= t1.
+Return convertible to T. See the Symmetry Note.
+orable<T, U>
+orable2<T, U>	T operator|(const T&, const U&)
+T operator|(const U&, const T&)	T temp(t); temp |= u.
+Return convertible to T. See the Symmetry Note.
+andable<T>
+andable1<T>	T operator&(const T&, const T&)	T temp(t); temp &= t1.
+Return convertible to T. See the Symmetry Note.
+andable<T, U>
+andable2<T, U>	T operator&(const T&, const U&)
+T operator&(const U&, const T&)	T temp(t); temp &= u.
+Return convertible to T. See the Symmetry Note.
+xorable<T>
+xorable1<T>	T operator^(const T&, const T&)	T temp(t); temp ^= t1.
+Return convertible to T. See the Symmetry Note.
+xorable<T, U>
+xorable2<T, U>	T operator^(const T&, const U&)
+T operator^(const U&, const T&)	T temp(t); temp ^= u.
+Return convertible to T. See the Symmetry Note.
+incrementable<T>	T operator++(T&, int)	T temp(t); ++t
+Return convertible to T.
+decrementable<T>	T operator--(T&, int)	T temp(t); --t;
+Return convertible to T.
+left_shiftable<T>
+left_shiftable1<T>	T operator<<(const T&, const T&)	T temp(t); temp <<= t1.
+Return convertible to T. See the Symmetry Note.
+left_shiftable<T, U>
+left_shiftable2<T, U>	T operator<<(const T&, const U&)	T temp(t); temp <<= u.
+Return convertible to T. See the Symmetry Note.
+right_shiftable<T>
+right_shiftable1<T>	T operator>>(const T&, const T&)	T temp(t); temp >>= t1.
+Return convertible to T. See the Symmetry Note.
+right_shiftable<T, U>
+right_shiftable2<T, U>	T operator>>(const T&, const U&)	T temp(t); temp >>= u.
+Return convertible to T. See the Symmetry Note.
+equivalent<T>
+equivalent1<T>	bool operator==(const T&, const T&)	t < t1.
+Return convertible to bool. See the Ordering Note.
+equivalent<T, U>
+equivalent2<T, U>	bool operator==(const T&, const U&)	t < u. t > u.
+Returns convertible to bool. See the Ordering Note.
+partially_ordered<T>
+partially_ordered1<T>	bool operator>(const T&, const T&)
+bool operator<=(const T&, const T&)
+bool operator>=(const T&, const T&)	t < t1. t == t1.
+Returns convertible to bool. See the Ordering Note.
+partially_ordered<T, U>
+partially_ordered2<T, U>	bool operator<=(const T&, const U&)
+bool operator>=(const T&, const U&)
+bool operator>(const U&, const T&)
+bool operator<(const U&, const T&)
+bool operator<=(const U&, const T&)
+bool operator>=(const U&, const T&)	t < u. t > u. t == u.
+Returns convertible to bool. See the Ordering Note.
+Ordering Note
+The less_than_comparable<T> and partially_ordered<T> templates provide the same set of operations. However, the workings of less_than_comparable<T> assume that all values of type T can be placed in a total order. If that is not true (e.g. Not-a-Number values in IEEE floating point arithmetic), then partially_ordered<T> should be used. The partially_ordered<T> template can be used for a totally-ordered type, but it is not as efficient as less_than_comparable<T>. This rule also applies for less_than_comparable<T, U> and partially_ordered<T, U> with respect to the ordering of all T and U values, and for both versions of equivalent<>. The solution for equivalent<> is to write a custom operator== for the target class.
+
+Symmetry Note
+Before talking about symmetry, we need to talk about optimizations to understand the reasons for the different implementation styles of operators. Let's have a look at operator+ for a class T as an example:
+
+T operator+( const T& lhs, const T& rhs )
+{
+   return T( lhs ) += rhs;
