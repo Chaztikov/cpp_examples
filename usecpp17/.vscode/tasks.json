@@ -1,0 +1,23 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "maked",
+            "type": "shell",
+            "command": "c++ -DNDEBUG -O2 -felide-constructors -w -I/home/chaztikov/opt/libmesh/opt/include -I/usr/include -I/usr/include/eigen3 -I/usr/include/vtk-7.1 -pthread -c main.C -o main.o"
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "label": "make",
+            "type": "shell",
+            "command": "make -j12 && ./example-opt"
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
